@@ -23,6 +23,7 @@
 
 
 @property (strong, nonatomic) FBFriendPickerViewController *friendPickerController;
+
 @property (weak, nonatomic) IBOutlet FBLoginView *loginView;
 @property (unsafe_unretained, nonatomic) IBOutlet UITextView *userInfoTextView;
 @property NSArray *myFriends;
