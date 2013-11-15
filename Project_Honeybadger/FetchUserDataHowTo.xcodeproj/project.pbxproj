@@ -319,15 +319,8 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../../../../../Documents/FacebookSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../../../../../../Documents/FacebookSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"/Users/apeter41/Documents/facebook-ios-sdk-master/build",
-					/Users/Syntax/Documents/FacebookSDK,
+					"$(PROJECT_DIR)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"/Users/Syntax/Documents/Stephens\\ Folder/Programing/Cpe\\ 123/Notes/Facebook\\ FriendsList",
-					"/Users/Syntax/Documents/Stephens\\ Folder/Programing/Cpe\\ 123/Notes/Facebook\\ FriendsList",
-					"/Users/Syntax/Documents/Stephens\\ Folder/Programing/Cpe\\ 123/Notes/Facebook\\ FriendsList",
-					"/Volumes/NO\\ NAME/Facebook\\ FriendsList\\ Number\\ Two",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FetchUserDataHowTo/FetchUserDataHowTo-Prefix.pch";
@@ -344,15 +337,8 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../../../../../Documents/FacebookSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"$(SRCROOT)/../../../../../../Documents/FacebookSDK\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"",
-					"/Users/apeter41/Documents/facebook-ios-sdk-master/build",
-					/Users/Syntax/Documents/FacebookSDK,
+					"$(PROJECT_DIR)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"/Users/Syntax/Documents/Stephens\\ Folder/Programing/Cpe\\ 123/Notes/Facebook\\ FriendsList",
-					"/Users/Syntax/Documents/Stephens\\ Folder/Programing/Cpe\\ 123/Notes/Facebook\\ FriendsList",
-					"/Users/Syntax/Documents/Stephens\\ Folder/Programing/Cpe\\ 123/Notes/Facebook\\ FriendsList",
-					"/Volumes/NO\\ NAME/Facebook\\ FriendsList\\ Number\\ Two",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FetchUserDataHowTo/FetchUserDataHowTo-Prefix.pch";
