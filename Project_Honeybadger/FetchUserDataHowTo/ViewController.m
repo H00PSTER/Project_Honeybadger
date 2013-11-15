@@ -47,7 +47,7 @@
     
     self.friendPickerController = [[FBFriendPickerViewController alloc] init];
     self.friendPickerController.title = @"Pick Friends";
-    self.friendPickerController.delegate = self;
+
 
 }
 
