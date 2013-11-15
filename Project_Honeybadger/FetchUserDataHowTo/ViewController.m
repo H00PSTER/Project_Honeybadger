@@ -28,6 +28,7 @@
 @property NSArray *myFriends;
 @property NSDictionary *myInfo;
 @property NSArray *trueFriends;
+@property NSArray *trueFriendNames;
 
 @end
 
@@ -168,7 +169,7 @@
     if (!error)
     {
         NSMutableArray *trueParseFriends = [[NSMutableArray alloc] init];
-        self.trueFriends = trueParseFriends;
+        
         for (NSDictionary *parseFriend in person)
         {
             
@@ -178,14 +179,11 @@
                 
                 [trueParseFriends addObject:parseFriend];
             }
-         }
+        }
+        self.trueFriends = trueParseFriends;
+        [self checkForMutualTrueFriends];
     }
 }
-
-
-
-
-
 
 
 - (void)checkPersonCallback: (NSArray*) person error: (NSError*) error
@@ -257,8 +255,27 @@
 }
 
 
+- (void) checkForMutualTrueFriends
+{
+    NSMutableArray *trueFacebookFriends = [[NSMutableArray alloc] init];
 
+    for (NSDictionary *trueFriendInfo in self.trueFriends)
+    {
+        
+        for (NSDictionary *facebookFriend in self.myFriends)
+        {
+            NSString *trueFriendId = trueFriendInfo[@"facebookId"];
+            NSString *facebookFriendId = facebookFriend[@"id"];
+            if ([trueFriendId isEqualToString:facebookFriendId])
+            {
+                [trueFacebookFriends addObject: facebookFriend[@"name"]];
+            }
+        }
+        
+    }
+    self.trueFriendNames = trueFacebookFriends;
 
+}
 
 
 
