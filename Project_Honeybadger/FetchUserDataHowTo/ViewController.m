@@ -49,6 +49,10 @@
 
 - (void)viewDidLoad
 {
+    
+    
+    
+    
     [super viewDidLoad];
     
     
@@ -114,6 +118,7 @@
                  [self createParseObjectLoop];
                  [self checkParseObjectLoop];
                  [self checkTrueParseObjectLoop];
+                 [self checkParseForGameId];
              }];
              
              
@@ -127,7 +132,44 @@
 
 
 
+- (void) checkParseForGameId
+{
+    NSString *userId = self.myInfo[@"id"];
+   
+    //We need to just query for the user's id.
+    
+    
+    PFQuery * query = [PFQuery queryWithClassName: @"Player"];
+    [query whereKey:@"facebookId" equalTo:userId];
+    query.limit = 1000;
+    [query findObjectsInBackgroundWithTarget:self
+                                    selector: @selector(loadGameId:error:)];
 
+}
+
+- (void) loadGameId: (NSArray*) person error: (NSError*) error
+{
+    for (NSDictionary *userInfo in person)
+    {
+        if (userInfo[@"gameId"] != nil)
+        {
+            
+            //Triggers join button to light up
+            //NSLog(userInfo[@"gameId"]);
+        }
+    }
+  
+    
+}
+
+- (void) hasAcceptedInvite
+{
+    //This is called by the IBOutlet of the Join Button. It now updates the parse column "hasAccepted" to true
+}
+
+
+
+//2 Arrays. One shuffled. For loop with increment on the index for the shuffled. Assigns random people to non-random array. upload to parse.
 
 
 - (void) checkTrueParseObjectLoop
