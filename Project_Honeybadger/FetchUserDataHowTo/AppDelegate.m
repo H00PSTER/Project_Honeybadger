@@ -39,12 +39,7 @@
 {
     [Parse setApplicationId:@"zSPAls8whKdnq6ngqlurJ4Xm5XXNOcaDE30CURRY"
                   clientKey:@"PyYJim1d0jbntsCx1V74uPIaLvVOdv7MhK4fxUn1"];
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
-    [self.window makeKeyAndVisible];
-    return YES;
+        return YES;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
