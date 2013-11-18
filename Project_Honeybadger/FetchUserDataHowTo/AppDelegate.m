@@ -43,11 +43,11 @@
     //This code we may need. Without it, the project will run on the storyboard, but there was an error. So I kept it in incase we revert
     
     
-    /*self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
-    [self.window makeKeyAndVisible];*/
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
