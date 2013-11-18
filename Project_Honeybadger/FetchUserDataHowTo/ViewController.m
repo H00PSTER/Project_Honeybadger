@@ -169,7 +169,7 @@
 
 
 
-//2 Arrays. One shuffled. For loop with increment on the index for the shuffled. Assigns random people to non-random array. upload to parse.
+//shuffle array. Assign the incremented index id to previous id via parse. When array is at last user assign that to the first person in the array
 
 
 - (void) checkTrueParseObjectLoop
