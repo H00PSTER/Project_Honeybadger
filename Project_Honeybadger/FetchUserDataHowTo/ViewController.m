@@ -16,6 +16,7 @@
 
 #import "ViewController.h"
 #import "AppDelegate.h"
+#import "MainViewController.h"
 #import <Parse/Parse.h>
 
 @interface ViewController ()
@@ -41,7 +42,7 @@
 - (void)viewDidLoad
 {
     
-    
+    optionsSingle = [GlobalVariables singleObject];
     [super viewDidLoad];
     self.loginView.readPermissions = @[@"basic_info",
                                        @"user_location",
@@ -94,7 +95,8 @@
                  
                  self.myInfo = user;
                  optionsSingle.userInfo = user;
-                self.myFriends = friends;
+                 //NSLog(@"%@", optionsSingle.userInfo);
+                 self.myFriends = friends;
                  [self createParseObjectLoop];
                  [self checkParseObjectLoop];
                  [self checkTrueParseObjectLoop];

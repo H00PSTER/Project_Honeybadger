@@ -24,6 +24,7 @@
 		30DB49BD160BF07400C2876A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DB49BC160BF07400C2876A /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		450A2FC5183D363000CE25AE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 450A2FC4183D363000CE25AE /* MainViewController.m */; };
 		450A2FC8183D375700CE25AE /* GlobalVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = 450A2FC7183D375700CE25AE /* GlobalVariables.m */; };
+		451A038F183D5537007F16B8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451A038E183D5537007F16B8 /* Default-568h@2x.png */; };
 		456890B91836E9CA0081850D /* DynamicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 456890B81836E9CA0081850D /* DynamicTableViewController.m */; };
 		458A06E2183D2C86000390C6 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458A06E1183D2C86000390C6 /* FacebookSDK.framework */; };
 		458A06E4183D2CA6000390C6 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458A06E3183D2CA6000390C6 /* Parse.framework */; };
@@ -63,6 +64,7 @@
 		450A2FC4183D363000CE25AE /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		450A2FC6183D375700CE25AE /* GlobalVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalVariables.h; sourceTree = "<group>"; };
 		450A2FC7183D375700CE25AE /* GlobalVariables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalVariables.m; sourceTree = "<group>"; };
+		451A038E183D5537007F16B8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		456890B71836E9CA0081850D /* DynamicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicTableViewController.h; sourceTree = "<group>"; };
 		456890B81836E9CA0081850D /* DynamicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicTableViewController.m; sourceTree = "<group>"; };
 		458A06E1183D2C86000390C6 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../FacebookSDK.framework; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		30A0E9E415DCD7D600CB5FC3 = {
 			isa = PBXGroup;
 			children = (
+				451A038E183D5537007F16B8 /* Default-568h@2x.png */,
 				30A0E9F915DCD7D600CB5FC3 /* FetchUserDataHowTo */,
 				30A0E9F215DCD7D600CB5FC3 /* Frameworks */,
 				30A0E9F015DCD7D600CB5FC3 /* Products */,
@@ -236,6 +239,7 @@
 				30A0EA1815DCD8E700CB5FC3 /* Icon-72.png in Resources */,
 				30A0EA1915DCD8E700CB5FC3 /* Icon-72@2x.png in Resources */,
 				30A0EA1A15DCD8E700CB5FC3 /* Icon.png in Resources */,
+				451A038F183D5537007F16B8 /* Default-568h@2x.png in Resources */,
 				82FC380B1833057000288ACB /* Storyboard.storyboard in Resources */,
 				30A0EA1B15DCD8E700CB5FC3 /* Icon@2x.png in Resources */,
 			);

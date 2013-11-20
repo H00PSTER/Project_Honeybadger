@@ -5,8 +5,11 @@
 //  Created by apeter41 on 11/20/13.
 //  Copyright (c) 2013 Facebook Inc. All rights reserved.
 //
+#import "AppDelegate.h"
 
 #import "MainViewController.h"
+#import "GlobalVariables.h"
+#import "ViewController.h"
 
 @interface MainViewController ()
 
@@ -25,6 +28,8 @@
 
 - (void)viewDidLoad
 {
+    optionsSingle = [GlobalVariables singleObject];
+    NSLog(@"%@", optionsSingle.userInfo);
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }

@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="82" y="-340"/>
         </scene>
-        <!--View Controller - Project Honeybadger-->
+        <!--Main View Controller - Project Honeybadger-->
         <scene sceneID="l2j-92-B8T">
             <objects>
-                <viewController id="q1r-Zq-3bT" sceneMemberID="viewController">
+                <viewController id="q1r-Zq-3bT" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qnC-zG-ZBc"/>
                         <viewControllerLayoutGuide type="bottom" id="Dcf-sY-V0N"/>
