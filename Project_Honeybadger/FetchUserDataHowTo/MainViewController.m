@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Facebook Inc. All rights reserved.
 //
 #import "AppDelegate.h"
-
+#import  <Parse/Parse.h>
 #import "MainViewController.h"
 #import "GlobalVariables.h"
 #import "ViewController.h"
@@ -28,11 +28,44 @@
 
 - (void)viewDidLoad
 {
+    
     optionsSingle = [GlobalVariables singleObject];
     NSLog(@"%@", optionsSingle.userInfo);
+    [self checkParseForGameId];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
+
+- (void) checkParseForGameId
+{
+    NSString *userId = optionsSingle.userInfo[@"id"];;
+    
+    //We need to just query for the user's id.
+    
+    
+    PFQuery * query = [PFQuery queryWithClassName: @"Player"];
+    [query whereKey:@"facebookId" equalTo:userId];
+    query.limit = 1000;
+    [query findObjectsInBackgroundWithTarget:self
+                                    selector: @selector(loadGameId:error:)];
+    
+}
+
+- (void) loadGameId: (NSArray*) person error: (NSError*) error
+{
+    for (NSDictionary *userInfo in person)
+    {
+        if (userInfo[@"gameId"] != nil)
+        {
+            
+            //Triggers join button to light up
+            NSLog(@"%@", userInfo[@"gameId"]);
+        }
+    }
+}
+    
+
+
 
 - (void)didReceiveMemoryWarning
 {

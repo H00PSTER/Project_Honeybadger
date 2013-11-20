@@ -101,7 +101,7 @@
                  [self checkParseObjectLoop];
                  [self checkTrueParseObjectLoop];
                  [self shuffleArrays];
-                 [self checkParseForGameId];
+        
                  [self hasAcceptedInvite];
              }];
              
@@ -116,35 +116,6 @@
 
 
 
-- (void) checkParseForGameId
-{
-    NSString *userId = self.myInfo[@"id"];
-   
-    //We need to just query for the user's id.
-    
-    
-    PFQuery * query = [PFQuery queryWithClassName: @"Player"];
-    [query whereKey:@"facebookId" equalTo:userId];
-    query.limit = 1000;
-    [query findObjectsInBackgroundWithTarget:self
-                                    selector: @selector(loadGameId:error:)];
-
-}
-
-- (void) loadGameId: (NSArray*) person error: (NSError*) error
-{
-    for (NSDictionary *userInfo in person)
-    {
-        if (userInfo[@"gameId"] != nil)
-        {
-            
-            //Triggers join button to light up
-            //NSLog(userInfo[@"gameId"]);
-        }
-    }
-  
-    
-}
 
 - (void) hasAcceptedInvite
 {
