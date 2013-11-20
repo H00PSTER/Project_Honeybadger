@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GlobalVariables.h"
 
 @interface DynamicTableViewController : UITableViewController
+
+{
+     GlobalVariables *optionsSingle;
+}
 
 @end

@@ -22,6 +22,8 @@
 		30A0EA1B15DCD8E700CB5FC3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30A0EA1715DCD8E700CB5FC3 /* Icon@2x.png */; };
 		30DB49BA160BF06E00C2876A /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DB49B9160BF06E00C2876A /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		30DB49BD160BF07400C2876A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DB49BC160BF07400C2876A /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		450A2FC5183D363000CE25AE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 450A2FC4183D363000CE25AE /* MainViewController.m */; };
+		450A2FC8183D375700CE25AE /* GlobalVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = 450A2FC7183D375700CE25AE /* GlobalVariables.m */; };
 		456890B91836E9CA0081850D /* DynamicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 456890B81836E9CA0081850D /* DynamicTableViewController.m */; };
 		458A06E2183D2C86000390C6 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458A06E1183D2C86000390C6 /* FacebookSDK.framework */; };
 		458A06E4183D2CA6000390C6 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458A06E3183D2CA6000390C6 /* Parse.framework */; };
@@ -57,6 +59,10 @@
 		30A0EA1715DCD8E700CB5FC3 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		30DB49B9160BF06E00C2876A /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		30DB49BC160BF07400C2876A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		450A2FC3183D363000CE25AE /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		450A2FC4183D363000CE25AE /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		450A2FC6183D375700CE25AE /* GlobalVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalVariables.h; sourceTree = "<group>"; };
+		450A2FC7183D375700CE25AE /* GlobalVariables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalVariables.m; sourceTree = "<group>"; };
 		456890B71836E9CA0081850D /* DynamicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicTableViewController.h; sourceTree = "<group>"; };
 		456890B81836E9CA0081850D /* DynamicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicTableViewController.m; sourceTree = "<group>"; };
 		458A06E1183D2C86000390C6 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../FacebookSDK.framework; sourceTree = "<group>"; };
@@ -148,6 +154,10 @@
 				30A0EA0315DCD7D600CB5FC3 /* AppDelegate.m */,
 				30A0EA0515DCD7D600CB5FC3 /* ViewController.h */,
 				30A0EA0615DCD7D600CB5FC3 /* ViewController.m */,
+				450A2FC6183D375700CE25AE /* GlobalVariables.h */,
+				450A2FC7183D375700CE25AE /* GlobalVariables.m */,
+				450A2FC3183D363000CE25AE /* MainViewController.h */,
+				450A2FC4183D363000CE25AE /* MainViewController.m */,
 				82FC380A1833057000288ACB /* Storyboard.storyboard */,
 				82FC380C183307ED00288ACB /* ViewController.xib */,
 				30A0E9FA15DCD7D600CB5FC3 /* Supporting Files */,
@@ -238,9 +248,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				450A2FC8183D375700CE25AE /* GlobalVariables.m in Sources */,
 				30A0EA0015DCD7D600CB5FC3 /* main.m in Sources */,
 				30A0EA0415DCD7D600CB5FC3 /* AppDelegate.m in Sources */,
 				30A0EA0715DCD7D600CB5FC3 /* ViewController.m in Sources */,
+				450A2FC5183D363000CE25AE /* MainViewController.m in Sources */,
 				456890B91836E9CA0081850D /* DynamicTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -38,25 +38,11 @@
 
 @synthesize userInfoTextView;
 
-
-- (IBAction)pickFriends:(id)sender
-{
-    
-    self.friendPickerController = [[FBFriendPickerViewController alloc] init];
-    self.friendPickerController.title = @"Pick Friends";
-
-
-}
-
 - (void)viewDidLoad
 {
     
     
-    
-    
     [super viewDidLoad];
-
-    
     self.loginView.readPermissions = @[@"basic_info",
                                        @"user_location",
                                        @"user_birthday",
@@ -66,7 +52,6 @@
 
 - (void)viewDidUnload
 {
-    [self setUserInfoTextView:nil];
     [self setLoginView:nil];
     [super viewDidUnload];
     
@@ -76,14 +61,6 @@
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
-
-
-
-
-
-
-
-
 
 
 - (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView
@@ -114,14 +91,16 @@
                  
                  
                  NSDictionary *user = @{@"id":userId, @"name":userName};
+                 
                  self.myInfo = user;
-                 self.myFriends = friends;
+                 optionsSingle.userInfo = user;
+                self.myFriends = friends;
                  [self createParseObjectLoop];
                  [self checkParseObjectLoop];
                  [self checkTrueParseObjectLoop];
-                    [self shuffleArrays];
+                 [self shuffleArrays];
                  [self checkParseForGameId];
-                     [self hasAcceptedInvite];
+                 [self hasAcceptedInvite];
              }];
              
              

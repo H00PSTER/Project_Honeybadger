@@ -15,9 +15,12 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "GlobalVariables.h"
 
 @interface ViewController : UIViewController
 
-- (IBAction)pickFriends:(id)sender;
+{
+      GlobalVariables *optionsSingle;
+}
 
 @end
