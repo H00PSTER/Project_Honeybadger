@@ -30,6 +30,7 @@
 @property NSDictionary *myInfo;
 @property NSArray *trueFriends;
 @property NSArray *trueFriendNames;
+@property NSMutableArray *randomPlayers;
 
 @end
 
@@ -54,7 +55,7 @@
     
     
     [super viewDidLoad];
-    
+
     
     self.loginView.readPermissions = @[@"basic_info",
                                        @"user_location",
@@ -118,6 +119,7 @@
                  [self createParseObjectLoop];
                  [self checkParseObjectLoop];
                  [self checkTrueParseObjectLoop];
+                    [self shuffleArrays];
                  [self checkParseForGameId];
              }];
              
@@ -170,6 +172,56 @@
 
 
 //shuffle array. Assign the incremented index id to previous id via parse. When array is at last user assign that to the first person in the array
+- (void) shuffleArrays
+{
+    NSMutableArray *testArray = [[NSMutableArray alloc] init];
+   
+    [testArray addObject:@"1"];
+    [testArray addObject:@"2"];
+    [testArray addObject:@"3"];
+    [testArray addObject:@"4"];
+    [testArray addObject:@"5"];
+    
+    for (int x = 0; x < [testArray count]; x++)
+    {
+        int randInt = (arc4random() % ([testArray count] - x)) + x;
+        [testArray exchangeObjectAtIndex:x withObjectAtIndex:randInt];
+    }
+    NSLog(@"%@", testArray);
+    self.randomPlayers = testArray;
+    [self assignTargets];
+}
+
+
+- (void) assignTargets
+{
+    
+    for (int index = 0; index < self.randomPlayers.count; index++)
+    {
+        
+        NSString *queryId;
+        NSString *targetId;
+        
+        if(index == self.randomPlayers.count - 1)
+        {
+            queryId = self.randomPlayers[index];
+            targetId = self.randomPlayers[0];
+            //NSLog (@"Target Id %@", queryId);
+            //NSLog(@"Hunter Id %@", targetId);
+        }
+        if(index != self.randomPlayers.count -1)
+        {
+          //change object
+            queryId = self.randomPlayers[index];
+            targetId = self.randomPlayers[index+1];
+           
+            //NSLog(@"Target Id %@", queryId);
+            //NSLog(@"Hunter Id %@", targetId);
+        }
+        
+    }
+}
+
 
 
 - (void) checkTrueParseObjectLoop
