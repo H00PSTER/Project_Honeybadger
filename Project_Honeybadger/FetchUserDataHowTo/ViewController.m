@@ -199,7 +199,7 @@
         int randInt = (arc4random() % ([testArray count] - x)) + x;
         [testArray exchangeObjectAtIndex:x withObjectAtIndex:randInt];
     }
-    NSLog(@"%@", testArray);
+    //NSLog(@"%@", testArray);
     self.randomPlayers = testArray;
     [self assignTargets];
 }
