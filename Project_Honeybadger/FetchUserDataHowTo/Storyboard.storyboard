@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="fMy-LQ-772">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="fMy-LQ-772">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -24,6 +24,16 @@
                                     <outlet property="delegate" destination="fMy-LQ-772" id="gKo-Mt-cJw"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="li6-RZ-05A">
+                                <rect key="frame" x="129" y="429" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="9ze-GW-T0j" kind="modal" id="TEC-h5-uUD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -33,28 +43,62 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76R-DC-iu7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="234" y="-332"/>
+            <point key="canvasLocation" x="82" y="-340"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="stb-b5-ov4">
+        <!--View Controller - Project Honeybadger-->
+        <scene sceneID="l2j-92-B8T">
             <objects>
-                <viewController id="q79-gH-obK" sceneMemberID="viewController">
+                <viewController id="q1r-Zq-3bT" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Zy4-03-zFQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="OFO-Ra-jzU"/>
+                        <viewControllerLayoutGuide type="top" id="qnC-zG-ZBc"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dcf-sY-V0N"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="J7p-5s-HYk">
+                    <view key="view" contentMode="scaleToFill" id="QSu-HY-Odm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJi-cd-aFV">
+                                <rect key="frame" x="115" y="243" width="91" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Create Game">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="UWF-PN-zyv" kind="push" id="lc3-2e-llZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKK-yd-UqZ">
+                                <rect key="frame" x="123" y="320" width="74" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Join Game">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="94V-xF-vwQ"/>
+                    <navigationItem key="navigationItem" title="Project Honeybadger" id="l7E-fu-rBd"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Pp-AF-X7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mse-ao-eq2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="599" y="-332"/>
+            <point key="canvasLocation" x="824" y="-340"/>
         </scene>
-        <!--Dynamic Table View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="z66-EH-ns0">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="9ze-GW-T0j" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yPM-H1-o8n">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="q1r-Zq-3bT" kind="relationship" relationship="rootViewController" id="GUt-Ng-KKi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L83-Zd-A3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="472" y="-340"/>
+        </scene>
+        <!--Dynamic Table View Controller - Invite Friends-->
         <scene sceneID="ZKV-aQ-MN8">
             <objects>
                 <tableViewController id="UWF-PN-zyv" customClass="DynamicTableViewController" sceneMemberID="viewController">
@@ -64,7 +108,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="titleCell" textLabel="cbs-Qf-rSx" style="IBUITableViewCellStyleDefault" id="RvA-7F-bFc">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RvA-7F-bFc" id="gfE-og-aAo">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -86,28 +130,13 @@
                             <outlet property="delegate" destination="UWF-PN-zyv" id="Qc9-hz-m1h"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Invite Friends" id="GU3-Br-tkQ">
+                        <barButtonItem key="rightBarButtonItem" title="Invite" id="e5h-0s-zOP"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bgn-El-Bbz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1013" y="-603"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="l1z-q2-ttc">
-            <objects>
-                <viewController id="zBh-bC-W30" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ypX-mH-QAE"/>
-                        <viewControllerLayoutGuide type="bottom" id="8Q4-Nr-KKC"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sQV-sM-Jr7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Oto-k3-EjJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1429" y="-597"/>
+            <point key="canvasLocation" x="1190" y="-340"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
