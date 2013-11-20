@@ -166,7 +166,19 @@
 
 - (void) hasAcceptedInvite
 {
+ 
+    
+
     //This is called by the IBOutlet of the Join Button. It now updates the parse column "hasAccepted" to true
+    //NSString *hasAcceptedInvite = @"true";
+    
+    //Query parse for user's facebook Id
+    
+    //PFObject *user;
+    
+    //set their parse object to true in the HAs Accepted Category
+    
+    
 }
 
 
