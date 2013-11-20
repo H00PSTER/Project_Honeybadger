@@ -11,9 +11,11 @@
 @interface GlobalVariables : NSObject
 {
     NSDictionary *userInfo;
+    NSArray *userFriends;
 }
 
 @property (nonatomic) NSDictionary *userInfo;
+@property (nonatomic) NSArray *userFriends;
 
 +(GlobalVariables *) singleObject;
 

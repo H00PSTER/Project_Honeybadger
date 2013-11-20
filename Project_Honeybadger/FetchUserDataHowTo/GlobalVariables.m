@@ -14,6 +14,8 @@
 }
 
 @synthesize userInfo;
+@synthesize userFriends;
+
 
 +(GlobalVariables *) singleObject
 {

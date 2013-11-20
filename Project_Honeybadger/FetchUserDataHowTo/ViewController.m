@@ -89,12 +89,14 @@
            
                  NSArray* friends = (NSArray*)[data data];
                  self.myFriends = (NSArray*)[data data];
-                 
+                 optionsSingle.userFriends = self.myFriends;
+                 NSLog(@"%@", optionsSingle.userFriends);
                  
                  NSDictionary *user = @{@"id":userId, @"name":userName};
                  
                  self.myInfo = user;
                  optionsSingle.userInfo = user;
+                 
                  //NSLog(@"%@", optionsSingle.userInfo);
                  self.myFriends = friends;
                  [self createParseObjectLoop];
@@ -102,7 +104,7 @@
                  [self checkTrueParseObjectLoop];
                  [self shuffleArrays];
         
-                 [self hasAcceptedInvite];
+               
              }];
              
              
@@ -117,40 +119,6 @@
 
 
 
-- (void) hasAcceptedInvite
-{
-    
-    NSString *userId = self.myInfo[@"id"];
-    
-    PFQuery * query = [PFQuery queryWithClassName: @"Player"];
-    [query whereKey:@"facebookId" equalTo:userId];
-    query.limit = 1000;
-    [query findObjectsInBackgroundWithTarget:self
-                                    selector: @selector(updateInviteState:error:)];
-    
-    
-    
-    
-    //This is called by the IBOutlet of the Join Button. It now updates the parse column "hasAccepted" to true
-    //NSString *hasAcceptedInvite = @"true";
-    
-    //Query parse for user's facebook Id
-    
-    //PFObject *user;
-    
-    //set their parse object to true in the HAs Accepted Category
-    
-    
-}
-
-- (void) updateInviteState: (NSArray*) person error: (NSError*) error
-{
-    NSString *hasAcceptedInvite = @"true";
-    PFObject *user = person[0];
-    [user setObject:hasAcceptedInvite forKey:@"hasAccepted"];
-    [user save];
-    
-}
 
 
 //shuffle array. Assign the incremented index id to previous id via parse. When array is at last user assign that to the first person in the array

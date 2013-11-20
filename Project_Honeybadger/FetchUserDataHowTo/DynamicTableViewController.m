@@ -7,6 +7,7 @@
 //
 
 #import "DynamicTableViewController.h"
+#import "GlobalVariables.h"
 
 @interface DynamicTableViewController ()
 
@@ -15,8 +16,6 @@
 @end
 
 @implementation DynamicTableViewController
-
-
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -30,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.dynamicList = @[@"John Doe", @"Jason Mraz", @"Martin Freeman", @"Jay Gatsby", @"Darth Vader"];
+    
     
 }
 

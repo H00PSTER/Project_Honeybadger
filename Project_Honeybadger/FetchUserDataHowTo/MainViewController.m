@@ -13,6 +13,8 @@
 
 @interface MainViewController ()
 
+- (IBAction)joinGame:()sender;
+
 @end
 
 @implementation MainViewController
@@ -31,7 +33,9 @@
     
     optionsSingle = [GlobalVariables singleObject];
     NSLog(@"%@", optionsSingle.userInfo);
+    
     [self checkParseForGameId];
+    [self hasAcceptedInvite];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
@@ -65,6 +69,28 @@
 }
     
 
+- (void) hasAcceptedInvite
+{
+    
+    NSString *userId = optionsSingle.userInfo[@"id"];
+    
+    PFQuery * query = [PFQuery queryWithClassName: @"Player"];
+    [query whereKey:@"facebookId" equalTo:userId];
+    query.limit = 1000;
+    [query findObjectsInBackgroundWithTarget:self
+                                    selector: @selector(updateInviteState:error:)];
+    
+}
+
+- (void) updateInviteState: (NSArray*) person error: (NSError*) error
+{
+    NSString *hasAcceptedInvite = @"true";
+    PFObject *user = person[0];
+    [user setObject:hasAcceptedInvite forKey:@"hasAccepted"];
+    [user save];
+    NSLog (@"The User accepted Invite");
+    
+}
 
 
 - (void)didReceiveMemoryWarning
@@ -73,4 +99,6 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)joinGame:(id)sender {
+}
 @end
