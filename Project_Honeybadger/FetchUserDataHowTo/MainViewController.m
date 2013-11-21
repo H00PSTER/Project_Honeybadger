@@ -13,7 +13,8 @@
 
 @interface MainViewController ()
 
-- (IBAction)joinGame:()sender;
+@property NSArray *trueFriends;
+
 
 @end
 
@@ -89,6 +90,65 @@
     [user setObject:hasAcceptedInvite forKey:@"hasAccepted"];
     [user save];
     NSLog (@"The User accepted Invite");
+    
+}
+
+
+
+
+- (void) checkTrueParseObjectLoop
+{
+    PFQuery * query = [PFQuery queryWithClassName: @"Player"];
+    query.limit = 1000;
+    [query findObjectsInBackgroundWithTarget:self
+                                    selector: @selector(mutualFriendsWithApp:error:)];
+}
+
+
+- (void) mutualFriendsWithApp: (NSArray*) person error: (NSError*) error
+
+
+{
+    if (!error)
+    {
+        NSMutableArray *trueParseFriends = [[NSMutableArray alloc] init];
+        
+        for (NSDictionary *parseFriend in person)
+        {
+            
+            if ([parseFriend[@"hasLoggedOn"] isEqualToString: @"true"])
+                
+            {
+                
+                [trueParseFriends addObject:parseFriend];
+            }
+        }
+        self.trueFriends = trueParseFriends;
+        [self checkForMutualTrueFriends];
+    }
+}
+
+
+- (void) checkForMutualTrueFriends
+{
+    NSMutableArray *trueFacebookFriends = [[NSMutableArray alloc] init];
+    
+    for (NSDictionary *trueFriendInfo in self.trueFriends)
+    {
+        
+        for (NSDictionary *facebookFriend in optionsSingle.userFriends)
+        {
+            NSString *trueFriendId = trueFriendInfo[@"facebookId"];
+            NSString *facebookFriendId = facebookFriend[@"id"];
+            if ([trueFriendId isEqualToString:facebookFriendId])
+            {
+                [trueFacebookFriends addObject: facebookFriend[@"name"]];
+            }
+        }
+        
+    }
+    optionsSingle.trueFriendNames = trueFacebookFriends;
+    NSLog(@"%@", optionsSingle.trueFriendNames);
     
 }
 
