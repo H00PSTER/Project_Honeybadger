@@ -15,6 +15,8 @@
 
 @property NSArray *trueFriends;
 
+- (IBAction)onClickJoin:(id)sender;
+
 
 @end
 
@@ -36,11 +38,15 @@
     NSLog(@"%@", optionsSingle.userInfo);
     
     [self checkParseForGameId];
-    [self hasAcceptedInvite];
     [self checkTrueParseObjectLoop];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
+- (void) onClickJoin:(id)sender
+{
+    [self hasAcceptedInvite];
+}
+
 
 - (void) checkParseForGameId
 {

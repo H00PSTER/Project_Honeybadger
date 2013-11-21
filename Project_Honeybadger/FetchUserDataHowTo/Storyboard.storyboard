@@ -75,6 +75,7 @@
                                 </state>
                                 <connections>
                                     <action selector="joinGame:" destination="q1r-Zq-3bT" eventType="touchUpInside" id="9HH-q8-HK8"/>
+                                    <action selector="onClickJoin:" destination="q1r-Zq-3bT" eventType="touchUpInside" id="bhB-kR-hHo"/>
                                 </connections>
                             </button>
                         </subviews>

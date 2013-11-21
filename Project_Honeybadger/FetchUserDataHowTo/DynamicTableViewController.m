@@ -62,7 +62,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return optionsSingle.trueFriendNames.count;
+    return self.trueFriendNames.count;
     
 }
 
@@ -73,7 +73,7 @@
     
     
     
-    NSString *dynamicIndexPaths = optionsSingle.trueFriendNames[indexPath.row];
+    NSString *dynamicIndexPaths = self.trueFriendNames[indexPath.row];
     
     cell.textLabel.text = dynamicIndexPaths;
     
