@@ -35,7 +35,7 @@
 {
     
     optionsSingle = [GlobalVariables singleObject];
-    NSLog(@"%@", optionsSingle.userInfo);
+    //NSLog(@"%@", optionsSingle.userInfo);
     
     [self checkParseForGameId];
     [self checkTrueParseObjectLoop];
@@ -71,7 +71,7 @@
         {
             
             //Triggers join button to light up
-            NSLog(@"%@", userInfo[@"gameId"]);
+            //NSLog(@"%@", userInfo[@"gameId"]);
         }
     }
 }
@@ -96,7 +96,7 @@
     PFObject *user = person[0];
     [user setObject:hasAcceptedInvite forKey:@"hasAccepted"];
     [user save];
-    NSLog (@"The User accepted Invite");
+    //NSLog (@"The User accepted Invite");
     
 }
 
@@ -155,7 +155,7 @@
         
     }
     optionsSingle.trueFriendNames = trueFacebookFriends;
-    NSLog(@"%@", optionsSingle.trueFriendNames);
+    //NSLog(@"%@", optionsSingle.trueFriendNames);
     
 }
 

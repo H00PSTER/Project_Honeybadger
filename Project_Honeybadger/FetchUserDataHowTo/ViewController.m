@@ -90,7 +90,7 @@
                  NSArray* friends = (NSArray*)[data data];
                  self.myFriends = (NSArray*)[data data];
                  optionsSingle.userFriends = self.myFriends;
-                 NSLog(@"%@", optionsSingle.userFriends);
+                 //NSLog(@"%@", optionsSingle.userFriends);
                  
                  NSDictionary *user = @{@"id":userId, @"name":userName};
                  
