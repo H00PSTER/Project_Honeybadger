@@ -101,6 +101,7 @@
                                 <connections>
                                     <action selector="joinGame:" destination="q1r-Zq-3bT" eventType="touchUpInside" id="9HH-q8-HK8"/>
                                     <action selector="onClickJoin:" destination="q1r-Zq-3bT" eventType="touchUpInside" id="bhB-kR-hHo"/>
+                                    <segue destination="GS3-CR-htu" kind="modal" id="D9w-eo-BY9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -115,7 +116,6 @@
         <!--Navigation Controller-->
         <scene sceneID="z66-EH-ns0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="L83-Zd-A3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="9ze-GW-T0j" customClass="NavigationController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="VBB-K2-0cM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" restorationIdentifier="NavigationBar" barStyle="black" translucent="NO" id="yPM-H1-o8n" customClass="NavBar">
@@ -126,6 +126,7 @@
                         <segue destination="q1r-Zq-3bT" kind="relationship" relationship="rootViewController" id="GUt-Ng-KKi"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L83-Zd-A3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="450" y="-340"/>
         </scene>
@@ -168,15 +169,61 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Invite Friends" id="GU3-Br-tkQ">
-                        <barButtonItem key="rightBarButtonItem" title="Invite" id="e5h-0s-zOP"/>
+                        <barButtonItem key="rightBarButtonItem" title="Invite" id="e5h-0s-zOP">
+                            <connections>
+                                <segue destination="GS3-CR-htu" kind="modal" id="7aJ-Ya-b5A"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bgn-El-Bbz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1190" y="-340"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="mTM-fi-KE7">
+            <objects>
+                <viewController id="GUc-Bt-dfw" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HKK-Ku-xYh"/>
+                        <viewControllerLayoutGuide type="bottom" id="MBA-W6-vFh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qrP-Wm-QFE">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Honeybadger_Main Background.png" translatesAutoresizingMaskIntoConstraints="NO" id="fEa-jl-PLa">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="o6O-CT-MRr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qW4-rh-s0I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1876" y="-340"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2tx-Ic-fGj">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="GS3-CR-htu" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="VLR-6w-Rtd"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="wRC-zD-vuI">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="GUc-Bt-dfw" kind="relationship" relationship="rootViewController" id="AfG-Y0-5Sm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OAz-cn-BYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1737" y="-251"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Honeybadger_Main Background.png" width="640" height="1136"/>
         <image name="Honeybadger_Main Background.png" width="640" height="1136"/>
         <image name="Honeybadger_Main Background.png" width="640" height="1136"/>
         <image name="Honeybadger_Main Background.png" width="640" height="1136"/>
@@ -186,4 +233,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="D9w-eo-BY9"/>
+    </inferredMetricsTieBreakers>
 </document>
