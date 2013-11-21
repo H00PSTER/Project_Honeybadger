@@ -8,8 +8,9 @@
         <scene sceneID="qq6-dz-xyX">
             <objects>
                 <navigationController definesPresentationContext="YES" id="Kwc-EZ-uVz" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HaU-94-hBR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="HaU-94-hBR">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.12788982779999999" green="0.12788982779999999" blue="0.12788982779999999" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="fMy-LQ-772" kind="relationship" relationship="rootViewController" id="sCe-fr-kNS"/>
@@ -19,7 +20,7 @@
             </objects>
             <point key="canvasLocation" x="-306" y="-340"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - Login to Facebook-->
         <scene sceneID="OLx-T5-jgs">
             <objects>
                 <viewController id="fMy-LQ-772" customClass="ViewController" sceneMemberID="viewController">
@@ -28,7 +29,7 @@
                         <viewControllerLayoutGuide type="bottom" id="0Lv-Mf-Sm6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7iA-jH-BFF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Honeybadger_Main Background.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yuv-t4-UAf">
@@ -36,7 +37,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rQW-8Y-wI8" customClass="FBLoginView">
-                                <rect key="frame" x="41" y="402" width="239" height="212"/>
+                                <rect key="frame" x="41" y="402" width="239" height="148"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="li6-RZ-05A">
@@ -46,7 +47,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="9ze-GW-T0j" kind="modal" id="TEC-h5-uUD"/>
+                                            <segue destination="9ze-GW-T0j" kind="modal" id="g6n-xC-99I"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -58,7 +59,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="71l-1u-PvG"/>
+                    <navigationItem key="navigationItem" title="Login to Facebook" id="71l-1u-PvG"/>
                     <connections>
                         <outlet property="loginView" destination="rQW-8Y-wI8" id="Z2O-nR-tcP"/>
                     </connections>
@@ -76,7 +77,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Dcf-sY-V0N"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QSu-HY-Odm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Honeybadger_Main Background.png" translatesAutoresizingMaskIntoConstraints="NO" id="b3q-Uj-UeZ">
@@ -116,8 +117,10 @@
         <!--Navigation Controller-->
         <scene sceneID="z66-EH-ns0">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L83-Zd-A3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="9ze-GW-T0j" customClass="NavigationController" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" restorationIdentifier="NavigationBar" id="yPM-H1-o8n" customClass="NavBar">
+                    <navigationItem key="navigationItem" id="VBB-K2-0cM"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" restorationIdentifier="NavigationBar" barStyle="black" translucent="NO" id="yPM-H1-o8n" customClass="NavBar">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.12788982780612246" green="0.12788982780612246" blue="0.12788982780612246" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
@@ -125,7 +128,6 @@
                         <segue destination="q1r-Zq-3bT" kind="relationship" relationship="rootViewController" id="GUt-Ng-KKi"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="L83-Zd-A3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="450" y="-340"/>
         </scene>
@@ -134,16 +136,17 @@
             <objects>
                 <tableViewController id="UWF-PN-zyv" customClass="DynamicTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fu8-sC-uce">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Honeybadger_Main Background.png" id="EvE-g3-CGM">
-                            <rect key="frame" x="0.0" y="130" width="320" height="458"/>
+                            <rect key="frame" x="0.0" y="66" width="320" height="458"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.12788982779999999" green="0.12788982779999999" blue="0.12788982779999999" alpha="1" colorSpace="calibratedRGB"/>
                         </imageView>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="titleCell" textLabel="cbs-Qf-rSx" style="IBUITableViewCellStyleDefault" id="RvA-7F-bFc">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RvA-7F-bFc" id="gfE-og-aAo">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -153,11 +156,12 @@
                                             <rect key="frame" x="15" y="0.0" width="290" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>

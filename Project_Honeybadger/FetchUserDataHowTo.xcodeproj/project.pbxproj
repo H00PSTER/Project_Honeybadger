@@ -34,7 +34,6 @@
 		45A3455B183E9766003D06C9 /* Honeybadger_Ping Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A34555183E9766003D06C9 /* Honeybadger_Ping Button.png */; };
 		45A3455C183E9766003D06C9 /* Honeybadger_Main Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A34556183E9766003D06C9 /* Honeybadger_Main Background.png */; };
 		45A3455D183E9766003D06C9 /* Honeybadger_Exit Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A34557183E9766003D06C9 /* Honeybadger_Exit Button.png */; };
-		45A34560183E9CAB003D06C9 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A3455F183E9CAB003D06C9 /* NavigationController.m */; };
 		82A4DD1F183189AE0073419F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A4DD1E183189AE0073419F /* AudioToolbox.framework */; };
 		82A4DD21183189B60073419F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A4DD20183189B60073419F /* CFNetwork.framework */; };
 		82A4DD23183189C20073419F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A4DD22183189C20073419F /* CoreLocation.framework */; };
@@ -82,8 +81,6 @@
 		45A34555183E9766003D06C9 /* Honeybadger_Ping Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Honeybadger_Ping Button.png"; sourceTree = "<group>"; };
 		45A34556183E9766003D06C9 /* Honeybadger_Main Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Honeybadger_Main Background.png"; sourceTree = "<group>"; };
 		45A34557183E9766003D06C9 /* Honeybadger_Exit Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Honeybadger_Exit Button.png"; sourceTree = "<group>"; };
-		45A3455E183E9CAB003D06C9 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
-		45A3455F183E9CAB003D06C9 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		82A4DD1E183189AE0073419F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		82A4DD20183189B60073419F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		82A4DD22183189C20073419F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -178,8 +175,6 @@
 				450A2FC3183D363000CE25AE /* MainViewController.h */,
 				450A2FC4183D363000CE25AE /* MainViewController.m */,
 				82FC380A1833057000288ACB /* Storyboard.storyboard */,
-				45A3455E183E9CAB003D06C9 /* NavigationController.h */,
-				45A3455F183E9CAB003D06C9 /* NavigationController.m */,
 				82FC380C183307ED00288ACB /* ViewController.xib */,
 				30A0E9FA15DCD7D600CB5FC3 /* Supporting Files */,
 			);
@@ -295,7 +290,6 @@
 				30A0EA0715DCD7D600CB5FC3 /* ViewController.m in Sources */,
 				450A2FC5183D363000CE25AE /* MainViewController.m in Sources */,
 				456890B91836E9CA0081850D /* DynamicTableViewController.m in Sources */,
-				45A34560183E9CAB003D06C9 /* NavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
