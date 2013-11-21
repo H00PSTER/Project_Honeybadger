@@ -12,6 +12,7 @@
 @interface DynamicTableViewController ()
 
 @property NSArray *dynamicList;
+@property NSArray *trueFriendNames;
 
 @end
 
@@ -28,6 +29,9 @@
 
 - (void)viewDidLoad
 {
+    
+    optionsSingle = [GlobalVariables singleObject];
+    self.trueFriendNames = optionsSingle.trueFriendNames;
     [super viewDidLoad];
     
     
@@ -58,7 +62,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return self.dynamicList.count;
+    return optionsSingle.trueFriendNames.count;
     
 }
 
@@ -69,7 +73,7 @@
     
     
     
-    NSString *dynamicIndexPaths = self.dynamicList[indexPath.row];
+    NSString *dynamicIndexPaths = optionsSingle.trueFriendNames[indexPath.row];
     
     cell.textLabel.text = dynamicIndexPaths;
     
