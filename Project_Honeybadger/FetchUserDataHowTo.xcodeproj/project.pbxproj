@@ -28,6 +28,12 @@
 		456890B91836E9CA0081850D /* DynamicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 456890B81836E9CA0081850D /* DynamicTableViewController.m */; };
 		458A06E2183D2C86000390C6 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458A06E1183D2C86000390C6 /* FacebookSDK.framework */; };
 		458A06E4183D2CA6000390C6 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458A06E3183D2CA6000390C6 /* Parse.framework */; };
+		45A34558183E9766003D06C9 /* Honeybadger_Secondary Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A34552183E9766003D06C9 /* Honeybadger_Secondary Button.png */; };
+		45A34559183E9766003D06C9 /* Honeybadger_Cancel Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A34553183E9766003D06C9 /* Honeybadger_Cancel Button.png */; };
+		45A3455A183E9766003D06C9 /* Honeybadger_Secondary Button_Inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A34554183E9766003D06C9 /* Honeybadger_Secondary Button_Inactive.png */; };
+		45A3455B183E9766003D06C9 /* Honeybadger_Ping Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A34555183E9766003D06C9 /* Honeybadger_Ping Button.png */; };
+		45A3455C183E9766003D06C9 /* Honeybadger_Main Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A34556183E9766003D06C9 /* Honeybadger_Main Background.png */; };
+		45A3455D183E9766003D06C9 /* Honeybadger_Exit Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A34557183E9766003D06C9 /* Honeybadger_Exit Button.png */; };
 		82A4DD1F183189AE0073419F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A4DD1E183189AE0073419F /* AudioToolbox.framework */; };
 		82A4DD21183189B60073419F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A4DD20183189B60073419F /* CFNetwork.framework */; };
 		82A4DD23183189C20073419F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A4DD22183189C20073419F /* CoreLocation.framework */; };
@@ -69,6 +75,12 @@
 		456890B81836E9CA0081850D /* DynamicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicTableViewController.m; sourceTree = "<group>"; };
 		458A06E1183D2C86000390C6 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../FacebookSDK.framework; sourceTree = "<group>"; };
 		458A06E3183D2CA6000390C6 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../Parse.framework; sourceTree = "<group>"; };
+		45A34552183E9766003D06C9 /* Honeybadger_Secondary Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Honeybadger_Secondary Button.png"; sourceTree = "<group>"; };
+		45A34553183E9766003D06C9 /* Honeybadger_Cancel Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Honeybadger_Cancel Button.png"; sourceTree = "<group>"; };
+		45A34554183E9766003D06C9 /* Honeybadger_Secondary Button_Inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Honeybadger_Secondary Button_Inactive.png"; sourceTree = "<group>"; };
+		45A34555183E9766003D06C9 /* Honeybadger_Ping Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Honeybadger_Ping Button.png"; sourceTree = "<group>"; };
+		45A34556183E9766003D06C9 /* Honeybadger_Main Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Honeybadger_Main Background.png"; sourceTree = "<group>"; };
+		45A34557183E9766003D06C9 /* Honeybadger_Exit Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Honeybadger_Exit Button.png"; sourceTree = "<group>"; };
 		82A4DD1E183189AE0073419F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		82A4DD20183189B60073419F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		82A4DD22183189C20073419F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -151,6 +163,7 @@
 		30A0E9F915DCD7D600CB5FC3 /* FetchUserDataHowTo */ = {
 			isa = PBXGroup;
 			children = (
+				45A34551183E9766003D06C9 /* Project_Honeybadger Graphics */,
 				456890B71836E9CA0081850D /* DynamicTableViewController.h */,
 				456890B81836E9CA0081850D /* DynamicTableViewController.m */,
 				30A0EA0215DCD7D600CB5FC3 /* AppDelegate.h */,
@@ -181,6 +194,19 @@
 				30A0EA0115DCD7D600CB5FC3 /* FetchUserDataHowTo-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		45A34551183E9766003D06C9 /* Project_Honeybadger Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				45A34552183E9766003D06C9 /* Honeybadger_Secondary Button.png */,
+				45A34553183E9766003D06C9 /* Honeybadger_Cancel Button.png */,
+				45A34554183E9766003D06C9 /* Honeybadger_Secondary Button_Inactive.png */,
+				45A34555183E9766003D06C9 /* Honeybadger_Ping Button.png */,
+				45A34556183E9766003D06C9 /* Honeybadger_Main Background.png */,
+				45A34557183E9766003D06C9 /* Honeybadger_Exit Button.png */,
+			);
+			path = "Project_Honeybadger Graphics";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,13 +261,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				82FC380D183307ED00288ACB /* ViewController.xib in Resources */,
+				45A3455A183E9766003D06C9 /* Honeybadger_Secondary Button_Inactive.png in Resources */,
+				45A3455C183E9766003D06C9 /* Honeybadger_Main Background.png in Resources */,
 				30A0E9FE15DCD7D600CB5FC3 /* InfoPlist.strings in Resources */,
+				45A3455B183E9766003D06C9 /* Honeybadger_Ping Button.png in Resources */,
 				30A0EA1815DCD8E700CB5FC3 /* Icon-72.png in Resources */,
 				30A0EA1915DCD8E700CB5FC3 /* Icon-72@2x.png in Resources */,
 				30A0EA1A15DCD8E700CB5FC3 /* Icon.png in Resources */,
 				451A038F183D5537007F16B8 /* Default-568h@2x.png in Resources */,
+				45A3455D183E9766003D06C9 /* Honeybadger_Exit Button.png in Resources */,
+				45A34558183E9766003D06C9 /* Honeybadger_Secondary Button.png in Resources */,
 				82FC380B1833057000288ACB /* Storyboard.storyboard in Resources */,
 				30A0EA1B15DCD8E700CB5FC3 /* Icon@2x.png in Resources */,
+				45A34559183E9766003D06C9 /* Honeybadger_Cancel Button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
