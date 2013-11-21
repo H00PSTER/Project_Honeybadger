@@ -246,6 +246,10 @@
             if ([userId isEqualToString: parseId])
             {
                 doesExist++;
+                player[@"name"] = self.myInfo[@"name"];
+                player[@"facebookId"] = self.myInfo[@"id"];
+                player[@"hasLoggedOn"] = @"true";
+                [player save];
             }
         }
         if (doesExist != 1)
