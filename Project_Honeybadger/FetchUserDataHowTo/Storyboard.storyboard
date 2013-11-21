@@ -116,9 +116,10 @@
         <!--Navigation Controller-->
         <scene sceneID="z66-EH-ns0">
             <objects>
-                <navigationController definesPresentationContext="YES" id="9ze-GW-T0j" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yPM-H1-o8n">
+                <navigationController definesPresentationContext="YES" id="9ze-GW-T0j" customClass="NavigationController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" restorationIdentifier="NavigationBar" id="yPM-H1-o8n" customClass="NavBar">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.12788982780612246" green="0.12788982780612246" blue="0.12788982780612246" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="q1r-Zq-3bT" kind="relationship" relationship="rootViewController" id="GUt-Ng-KKi"/>
