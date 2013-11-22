@@ -173,8 +173,8 @@
 				4522A8E0183ED5CF002A1976 /* GameViewController.m */,
 				30A0EA0215DCD7D600CB5FC3 /* AppDelegate.h */,
 				30A0EA0315DCD7D600CB5FC3 /* AppDelegate.m */,
-				30A0EA0515DCD7D600CB5FC3 /* ViewController.h */,
 				30A0EA0615DCD7D600CB5FC3 /* ViewController.m */,
+				30A0EA0515DCD7D600CB5FC3 /* ViewController.h */,
 				450A2FC6183D375700CE25AE /* GlobalVariables.h */,
 				450A2FC7183D375700CE25AE /* GlobalVariables.m */,
 				450A2FC3183D363000CE25AE /* MainViewController.h */,
@@ -377,8 +377,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					/Users/apeter41/Desktop,
-					/Users/apeter41/Desktop/Project_Honeybadger/Project_Honeybadger,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FetchUserDataHowTo/FetchUserDataHowTo-Prefix.pch";
@@ -397,8 +395,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					/Users/apeter41/Desktop,
-					/Users/apeter41/Desktop/Project_Honeybadger/Project_Honeybadger,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FetchUserDataHowTo/FetchUserDataHowTo-Prefix.pch";
