@@ -27,6 +27,7 @@
 		451A038F183D5537007F16B8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451A038E183D5537007F16B8 /* Default-568h@2x.png */; };
 		4522A8DD183ED45D002A1976 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4522A8DB183ED45D002A1976 /* FacebookSDK.framework */; };
 		4522A8DE183ED45D002A1976 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4522A8DC183ED45D002A1976 /* Parse.framework */; };
+		4522A8E1183ED5CF002A1976 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4522A8E0183ED5CF002A1976 /* GameViewController.m */; };
 		456890B91836E9CA0081850D /* DynamicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 456890B81836E9CA0081850D /* DynamicTableViewController.m */; };
 		45A34558183E9766003D06C9 /* Honeybadger_Secondary Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A34552183E9766003D06C9 /* Honeybadger_Secondary Button.png */; };
 		45A34559183E9766003D06C9 /* Honeybadger_Cancel Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A34553183E9766003D06C9 /* Honeybadger_Cancel Button.png */; };
@@ -73,6 +74,8 @@
 		451A038E183D5537007F16B8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4522A8DB183ED45D002A1976 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		4522A8DC183ED45D002A1976 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		4522A8DF183ED5CF002A1976 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		4522A8E0183ED5CF002A1976 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		456890B71836E9CA0081850D /* DynamicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicTableViewController.h; sourceTree = "<group>"; };
 		456890B81836E9CA0081850D /* DynamicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicTableViewController.m; sourceTree = "<group>"; };
 		45A34552183E9766003D06C9 /* Honeybadger_Secondary Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Honeybadger_Secondary Button.png"; sourceTree = "<group>"; };
@@ -166,6 +169,8 @@
 				45A34551183E9766003D06C9 /* Project_Honeybadger Graphics */,
 				456890B71836E9CA0081850D /* DynamicTableViewController.h */,
 				456890B81836E9CA0081850D /* DynamicTableViewController.m */,
+				4522A8DF183ED5CF002A1976 /* GameViewController.h */,
+				4522A8E0183ED5CF002A1976 /* GameViewController.m */,
 				30A0EA0215DCD7D600CB5FC3 /* AppDelegate.h */,
 				30A0EA0315DCD7D600CB5FC3 /* AppDelegate.m */,
 				30A0EA0515DCD7D600CB5FC3 /* ViewController.h */,
@@ -286,6 +291,7 @@
 			files = (
 				450A2FC8183D375700CE25AE /* GlobalVariables.m in Sources */,
 				30A0EA0015DCD7D600CB5FC3 /* main.m in Sources */,
+				4522A8E1183ED5CF002A1976 /* GameViewController.m in Sources */,
 				30A0EA0415DCD7D600CB5FC3 /* AppDelegate.m in Sources */,
 				30A0EA0715DCD7D600CB5FC3 /* ViewController.m in Sources */,
 				450A2FC5183D363000CE25AE /* MainViewController.m in Sources */,

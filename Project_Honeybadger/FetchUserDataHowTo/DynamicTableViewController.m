@@ -13,7 +13,7 @@
 
 @property NSArray *dynamicList;
 @property NSArray *trueFriendNames;
-
+@property NSMutableArray *invitedFriendNames;
 @end
 
 @implementation DynamicTableViewController
@@ -46,11 +46,12 @@
 
 
 
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
 
-
-
-
-
+    
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

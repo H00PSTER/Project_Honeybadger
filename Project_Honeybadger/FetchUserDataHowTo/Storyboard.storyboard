@@ -224,9 +224,6 @@
     </scenes>
     <resources>
         <image name="Honeybadger_Main Background.png" width="640" height="1136"/>
-        <image name="Honeybadger_Main Background.png" width="640" height="1136"/>
-        <image name="Honeybadger_Main Background.png" width="640" height="1136"/>
-        <image name="Honeybadger_Main Background.png" width="640" height="1136"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
