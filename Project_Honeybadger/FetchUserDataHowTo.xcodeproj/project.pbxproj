@@ -44,6 +44,8 @@
 		82A4DD2D18318A040073419F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A4DD2C18318A040073419F /* SystemConfiguration.framework */; };
 		82FC380B1833057000288ACB /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82FC380A1833057000288ACB /* Storyboard.storyboard */; };
 		82FC380D183307ED00288ACB /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82FC380C183307ED00288ACB /* ViewController.xib */; };
+		930F37DE183EDB9100E6479D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 930F37DD183EDB9100E6479D /* Images.xcassets */; };
+		930F37E0183EDB9C00E6479D /* NewIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 930F37DF183EDB9C00E6479D /* NewIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +95,8 @@
 		82A4DD2C18318A040073419F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		82FC380A1833057000288ACB /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		82FC380C183307ED00288ACB /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		930F37DD183EDB9100E6479D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		930F37DF183EDB9C00E6479D /* NewIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +185,7 @@
 				450A2FC4183D363000CE25AE /* MainViewController.m */,
 				82FC380A1833057000288ACB /* Storyboard.storyboard */,
 				82FC380C183307ED00288ACB /* ViewController.xib */,
+				930F37DD183EDB9100E6479D /* Images.xcassets */,
 				30A0E9FA15DCD7D600CB5FC3 /* Supporting Files */,
 			);
 			path = FetchUserDataHowTo;
@@ -191,6 +196,7 @@
 			children = (
 				30A0EA1415DCD8E700CB5FC3 /* Icon-72.png */,
 				30A0EA1515DCD8E700CB5FC3 /* Icon-72@2x.png */,
+				930F37DF183EDB9C00E6479D /* NewIcon.png */,
 				30A0EA1615DCD8E700CB5FC3 /* Icon.png */,
 				30A0EA1715DCD8E700CB5FC3 /* Icon@2x.png */,
 				30A0E9FB15DCD7D600CB5FC3 /* FetchUserDataHowTo-Info.plist */,
@@ -266,11 +272,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				82FC380D183307ED00288ACB /* ViewController.xib in Resources */,
+				930F37E0183EDB9C00E6479D /* NewIcon.png in Resources */,
 				45A3455A183E9766003D06C9 /* Honeybadger_Secondary Button_Inactive.png in Resources */,
 				45A3455C183E9766003D06C9 /* Honeybadger_Main Background.png in Resources */,
 				30A0E9FE15DCD7D600CB5FC3 /* InfoPlist.strings in Resources */,
 				45A3455B183E9766003D06C9 /* Honeybadger_Ping Button.png in Resources */,
 				30A0EA1815DCD8E700CB5FC3 /* Icon-72.png in Resources */,
+				930F37DE183EDB9100E6479D /* Images.xcassets in Resources */,
 				30A0EA1915DCD8E700CB5FC3 /* Icon-72@2x.png in Resources */,
 				30A0EA1A15DCD8E700CB5FC3 /* Icon.png in Resources */,
 				451A038F183D5537007F16B8 /* Default-568h@2x.png in Resources */,
@@ -373,6 +381,8 @@
 		30A0EA0E15DCD7D600CB5FC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -391,6 +401,8 @@
 		30A0EA0F15DCD7D600CB5FC3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

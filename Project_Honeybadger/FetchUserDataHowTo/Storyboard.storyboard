@@ -171,7 +171,7 @@
                     <navigationItem key="navigationItem" title="Invite Friends" id="GU3-Br-tkQ">
                         <barButtonItem key="rightBarButtonItem" title="Invite" id="e5h-0s-zOP">
                             <connections>
-                                <segue destination="GS3-CR-htu" kind="modal" id="7aJ-Ya-b5A"/>
+                                <segue destination="GS3-CR-htu" kind="modal" identifier="gameSegue" id="7aJ-Ya-b5A"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -219,7 +219,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OAz-cn-BYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1737" y="-251"/>
+            <point key="canvasLocation" x="1646" y="-331"/>
         </scene>
     </scenes>
     <resources>
@@ -234,6 +234,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="D9w-eo-BY9"/>
+        <segue reference="7aJ-Ya-b5A"/>
     </inferredMetricsTieBreakers>
 </document>
