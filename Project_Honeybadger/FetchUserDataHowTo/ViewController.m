@@ -22,7 +22,7 @@
 @interface ViewController ()
 
 
-
+@property NSArray *person;
 @property (strong, nonatomic) FBFriendPickerViewController *friendPickerController;
 
 @property (weak, nonatomic) IBOutlet FBLoginView *loginView;
@@ -100,8 +100,7 @@
                  //NSLog(@"%@", optionsSingle.userInfo);
                  self.myFriends = friends;
                  [self createParseObjectLoop];
-                 [self checkParseObjectLoop];
-                 [self checkTrueParseObjectLoop];
+             
                  [self shuffleArrays];
         
                
@@ -174,14 +173,6 @@
 
 
 
-- (void) checkTrueParseObjectLoop
-{
-    PFQuery * query = [PFQuery queryWithClassName: @"Player"];
-    query.limit = 1000;
-    [query findObjectsInBackgroundWithTarget:self
-                                    selector: @selector(mutualFriendsWithApp:error:)];
-}
-
 - (void) createParseObjectLoop
 {
     PFQuery * query = [PFQuery queryWithClassName: @"Player"];
@@ -189,33 +180,18 @@
     [query findObjectsInBackgroundWithTarget:self
                                     selector: @selector(loadPersonCallback:error:)];
 
-}
-
--(void) checkParseObjectLoop
-{
-    PFQuery * query = [PFQuery queryWithClassName: @"Player"];
-    query.limit = 1000;
-    [query findObjectsInBackgroundWithTarget:self
-                                    selector: @selector(checkPersonCallback:error:)];
-}
+} 
 
 
-
-
-
-
-
-
-
-- (void) mutualFriendsWithApp: (NSArray*) person error: (NSError*) error
+- (void) mutualFriendsWithApp
 
 
 {
-    if (!error)
-    {
+   
+    
         NSMutableArray *trueParseFriends = [[NSMutableArray alloc] init];
         
-        for (NSDictionary *parseFriend in person)
+        for (NSDictionary *parseFriend in self.person)
         {
             
             if ([parseFriend[@"hasLoggedOn"] isEqualToString: @"true"])
@@ -227,18 +203,18 @@
         }
         self.trueFriends = trueParseFriends;
         [self checkForMutualTrueFriends];
-    }
+    
 }
 
 
-- (void)checkPersonCallback: (NSArray*) person error: (NSError*) error
+- (void)checkPersonCallback
 {
   
-    if (!error)
-    {
+ 
+    
         PFObject *player = [PFObject objectWithClassName:@"Player"];
         int doesExist = 0;
-        for (NSDictionary *parseFriend in person)
+        for (NSDictionary *parseFriend in self.person)
         {
             NSString *parseId = parseFriend[@"facebookId"];
             NSString *userId = self.myInfo[@"id"];
@@ -258,17 +234,18 @@
             player[@"facebookId"] = self.myInfo[@"id"];
             player[@"hasLoggedOn"] = @"true";
             [player saveInBackground];
+            NSLog(@"He");
 
         }
 
     }
-}
+
 
 
 
 - (void) loadPersonCallback: (NSArray*) person error: (NSError*) error
 {
-    
+    self.person = person;
     if (!error)
     {
     
@@ -300,9 +277,12 @@
         }
             
         }
-    }
+        [self checkPersonCallback];
+        [self mutualFriendsWithApp];
+        
+       
 }
-
+}
 
 - (void) checkForMutualTrueFriends
 {
