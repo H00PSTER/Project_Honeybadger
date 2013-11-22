@@ -14,6 +14,7 @@
 @property NSArray *dynamicList;
 @property NSArray *trueFriendNames;
 @property NSMutableArray *invitedFriendNames;
+
 @end
 
 @implementation DynamicTableViewController
@@ -31,6 +32,8 @@
 {
     
     optionsSingle = [GlobalVariables singleObject];
+    NSMutableArray *invitedFriendNames = [[NSMutableArray alloc] init];
+    self.invitedFriendNames = invitedFriendNames;
     self.trueFriendNames = optionsSingle.trueFriendNames;
     [super viewDidLoad];
     
@@ -49,7 +52,12 @@
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-
+    NSString *invitedFriendName = self.trueFriendNames[indexPath.row];
+    NSLog(invitedFriendName);
+    
+    
+    [self.invitedFriendNames addObject:invitedFriendName];
+    NSLog(@"%@", self.invitedFriendNames    );
     
 }
 
