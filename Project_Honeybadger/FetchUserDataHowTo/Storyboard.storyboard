@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Kwc-EZ-uVz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Kwc-EZ-uVz">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -180,10 +180,10 @@
             </objects>
             <point key="canvasLocation" x="1190" y="-340"/>
         </scene>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="mTM-fi-KE7">
             <objects>
-                <viewController id="GUc-Bt-dfw" sceneMemberID="viewController">
+                <viewController id="GUc-Bt-dfw" customClass="GameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HKK-Ku-xYh"/>
                         <viewControllerLayoutGuide type="bottom" id="MBA-W6-vFh"/>
@@ -203,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qW4-rh-s0I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1876" y="-340"/>
+            <point key="canvasLocation" x="1480" y="148"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2tx-Ic-fGj">
@@ -223,6 +223,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Honeybadger_Main Background.png" width="640" height="1136"/>
+        <image name="Honeybadger_Main Background.png" width="640" height="1136"/>
+        <image name="Honeybadger_Main Background.png" width="640" height="1136"/>
         <image name="Honeybadger_Main Background.png" width="640" height="1136"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
