@@ -50,7 +50,13 @@
 
 #pragma mark - Table view data source
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 
+{
+    
+        [self generateGameId];
+
+}
 
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -61,7 +67,7 @@
     
     
     [self.invitedFriendNames addObject:invitedFriendName];
-    NSLog(@"%@", self.invitedFriendNames    );
+    NSLog(@"%@", self.invitedFriendNames);
     
 }
 
