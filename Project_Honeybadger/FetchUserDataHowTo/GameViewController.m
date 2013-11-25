@@ -33,6 +33,16 @@
     NSLog(@"Unable to start location manager. Error:%@", [error description]);
 }
 
+
+// What happens when arm button is pressed
+
+- (IBAction)armButtonPressed:(id)sender
+{
+    // insert tracking iBeacon code
+}
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
