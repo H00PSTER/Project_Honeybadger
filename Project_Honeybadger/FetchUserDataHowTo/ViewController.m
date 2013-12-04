@@ -100,6 +100,8 @@
                  //NSLog(@"%@", optionsSingle.userInfo);
                  self.myFriends = friends;
                  [self createParseObjectLoop];
+                 
+                 [self checkForUser];
              
                  [self shuffleArrays];
         
@@ -171,6 +173,15 @@
     }
 }
 
+-(void) checkForUser
+{
+    PFQuery * query = [PFQuery queryWithClassName: @"Player"];
+    [query whereKey:@"name" equalTo:self.myInfo[@"name"]];
+    query.limit = 1000;
+    [query findObjectsInBackgroundWithTarget:self
+                                    selector: @selector(checkPersonCallback:error:)];
+    
+}
 
 
 - (void) createParseObjectLoop
@@ -179,8 +190,11 @@
     query.limit = 1000;
     [query findObjectsInBackgroundWithTarget:self
                                     selector: @selector(loadPersonCallback:error:)];
+    
+}
 
-} 
+
+
 
 
 - (void) mutualFriendsWithApp
@@ -207,38 +221,32 @@
 }
 
 
-- (void)checkPersonCallback
+- (void)checkPersonCallback: (NSArray*) person error: (NSError*) error
 {
   
- 
     
+    
+   
+    
+    
+ 
+    if ([person firstObject] == nil)
+    {
         PFObject *player = [PFObject objectWithClassName:@"Player"];
-        int doesExist = 0;
-        for (NSDictionary *parseFriend in self.person)
-        {
-            NSString *parseId = parseFriend[@"facebookId"];
-            NSString *userId = self.myInfo[@"id"];
-            
-            if ([userId isEqualToString: parseId])
-            {
-                doesExist++;
-                player[@"name"] = self.myInfo[@"name"];
-                player[@"facebookId"] = self.myInfo[@"id"];
-                player[@"hasLoggedOn"] = @"true";
-                [player save];
-            }
-        }
-        if (doesExist != 1)
-        {
-            player[@"name"] = self.myInfo[@"name"];
-            player[@"facebookId"] = self.myInfo[@"id"];
-            player[@"hasLoggedOn"] = @"true";
-            [player saveInBackground];
-            NSLog(@"He");
-
-        }
-
+        player[@"name"] = self.myInfo[@"name"];
+        player[@"facebookId"] = self.myInfo[@"id"];
+        player[@"hasLoggedOn"] = @"true";
+        [player saveInBackground];
     }
+else
+{
+    
+    PFObject *user = [person firstObject];
+    [user setObject:@"true" forKey:@"hasLoggedOn"];
+    [user save];
+}
+    
+}
 
 
 
@@ -277,7 +285,7 @@
         }
             
         }
-        [self checkPersonCallback];
+      
         [self mutualFriendsWithApp];
         
        

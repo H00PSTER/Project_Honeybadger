@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		300A6C15172F0EF2000380AA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300A6C14172F0EF2000380AA /* Security.framework */; };
 		30267BC51612461C00B7B3CE /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30267BC41612461C00B7B3CE /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		307BDA56184571FB005D0960 /* TrackingTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 307BDA55184571FB005D0960 /* TrackingTestViewController.m */; };
 		30A0E9F415DCD7D600CB5FC3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A0E9F315DCD7D600CB5FC3 /* UIKit.framework */; };
 		30A0E9F615DCD7D600CB5FC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A0E9F515DCD7D600CB5FC3 /* Foundation.framework */; };
 		30A0E9F815DCD7D600CB5FC3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A0E9F715DCD7D600CB5FC3 /* CoreGraphics.framework */; };
@@ -53,6 +54,8 @@
 /* Begin PBXFileReference section */
 		300A6C14172F0EF2000380AA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		30267BC41612461C00B7B3CE /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		307BDA54184571FB005D0960 /* TrackingTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrackingTestViewController.h; path = ../TrackingTestViewController.h; sourceTree = "<group>"; };
+		307BDA55184571FB005D0960 /* TrackingTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrackingTestViewController.m; path = ../TrackingTestViewController.m; sourceTree = "<group>"; };
 		30A0E9EF15DCD7D600CB5FC3 /* FetchUserDataHowTo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FetchUserDataHowTo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A0E9F315DCD7D600CB5FC3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		30A0E9F515DCD7D600CB5FC3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -189,6 +192,8 @@
 				450A2FC4183D363000CE25AE /* MainViewController.m */,
 				82FC380A1833057000288ACB /* Storyboard.storyboard */,
 				82FC380C183307ED00288ACB /* ViewController.xib */,
+				307BDA54184571FB005D0960 /* TrackingTestViewController.h */,
+				307BDA55184571FB005D0960 /* TrackingTestViewController.m */,
 				930F37DD183EDB9100E6479D /* Images.xcassets */,
 				30A0E9FA15DCD7D600CB5FC3 /* Supporting Files */,
 			);
@@ -306,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				450A2FC8183D375700CE25AE /* GlobalVariables.m in Sources */,
+				307BDA56184571FB005D0960 /* TrackingTestViewController.m in Sources */,
 				30A0EA0015DCD7D600CB5FC3 /* main.m in Sources */,
 				4522A8E1183ED5CF002A1976 /* GameViewController.m in Sources */,
 				30A0EA0415DCD7D600CB5FC3 /* AppDelegate.m in Sources */,
