@@ -243,9 +243,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ICD-ad-h0Y"/>
-                    <connections>
-                        <outlet property="map" destination="bPa-up-6VE" id="rAH-bZ-HAd"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zmw-Nc-rfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

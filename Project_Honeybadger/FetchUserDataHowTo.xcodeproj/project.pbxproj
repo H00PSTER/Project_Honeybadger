@@ -49,6 +49,8 @@
 		9311A76918400DCB008E9F57 /* NewIcon80.png in Resources */ = {isa = PBXBuildFile; fileRef = 9311A76818400DCB008E9F57 /* NewIcon80.png */; };
 		9311A76B18400DD6008E9F57 /* NewIcon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 9311A76A18400DD6008E9F57 /* NewIcon120.png */; };
 		9311A76F18400EFA008E9F57 /* NewIcon58.png in Resources */ = {isa = PBXBuildFile; fileRef = 9311A76E18400EFA008E9F57 /* NewIcon58.png */; };
+		ADFB50B3184F118D003FFB1B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFB50B2184F118D003FFB1B /* MapKit.framework */; };
+		ADFB50B6184F121B003FFB1B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB50B5184F121B003FFB1B /* MapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +106,9 @@
 		9311A76818400DCB008E9F57 /* NewIcon80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewIcon80.png; sourceTree = "<group>"; };
 		9311A76A18400DD6008E9F57 /* NewIcon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewIcon120.png; sourceTree = "<group>"; };
 		9311A76E18400EFA008E9F57 /* NewIcon58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewIcon58.png; sourceTree = "<group>"; };
+		ADFB50B2184F118D003FFB1B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		ADFB50B4184F121B003FFB1B /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = ../MapViewController.h; sourceTree = "<group>"; };
+		ADFB50B5184F121B003FFB1B /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = ../MapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADFB50B3184F118D003FFB1B /* MapKit.framework in Frameworks */,
 				82A4DD2D18318A040073419F /* SystemConfiguration.framework in Frameworks */,
 				82A4DD2B183189F90073419F /* StoreKit.framework in Frameworks */,
 				300A6C15172F0EF2000380AA /* Security.framework in Frameworks */,
@@ -154,6 +160,7 @@
 		30A0E9F215DCD7D600CB5FC3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ADFB50B2184F118D003FFB1B /* MapKit.framework */,
 				4522A8DB183ED45D002A1976 /* FacebookSDK.framework */,
 				4522A8DC183ED45D002A1976 /* Parse.framework */,
 				82A4DD2C18318A040073419F /* SystemConfiguration.framework */,
@@ -178,6 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				45A34551183E9766003D06C9 /* Project_Honeybadger Graphics */,
+				ADFB50B4184F121B003FFB1B /* MapViewController.h */,
+				ADFB50B5184F121B003FFB1B /* MapViewController.m */,
 				456890B71836E9CA0081850D /* DynamicTableViewController.h */,
 				456890B81836E9CA0081850D /* DynamicTableViewController.m */,
 				4522A8DF183ED5CF002A1976 /* GameViewController.h */,
@@ -313,6 +322,7 @@
 				450A2FC8183D375700CE25AE /* GlobalVariables.m in Sources */,
 				307BDA56184571FB005D0960 /* TrackingTestViewController.m in Sources */,
 				30A0EA0015DCD7D600CB5FC3 /* main.m in Sources */,
+				ADFB50B6184F121B003FFB1B /* MapViewController.m in Sources */,
 				4522A8E1183ED5CF002A1976 /* GameViewController.m in Sources */,
 				30A0EA0415DCD7D600CB5FC3 /* AppDelegate.m in Sources */,
 				30A0EA0715DCD7D600CB5FC3 /* ViewController.m in Sources */,
