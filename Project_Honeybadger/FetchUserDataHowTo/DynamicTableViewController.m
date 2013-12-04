@@ -112,8 +112,10 @@
 
 {
     
-        [self generateGameId];
+    
     [self shuffleArrays];
+    
+    [self generateGameId];
 
 }
 
@@ -145,24 +147,39 @@
 }
 
 -(void) assignGameId
+
 {
-    PFQuery * query = [PFQuery queryWithClassName: @"Player"];
-    [query whereKey:@"name" equalTo:self.tempUserName];
-    query.limit = 1000;
-    [query findObjectsInBackgroundWithTarget:self
-                                    selector: @selector(assignParseObjectsWithIds:error:)];
+    int i = 0;
+    for (NSString *invitedUserName in self.invitedFriendNames)
+    {
+        PFQuery * query = [PFQuery queryWithClassName: @"Player"];
+        
+        [query whereKey:@"name" equalTo:self.invitedFriendNames[i]];
+        
+            
+        
+        query.limit = 1000;
+        [query findObjectsInBackgroundWithTarget:self
+                                            selector: @selector(assignParseObjectsWithIds:error:)];
+
+        i++;
+    }
     
 }
 
 - (void) assignParseObjectsWithIds: (NSArray*) person error: (NSError*) error
 {
-    
-    PFObject *user = person[0];
+    NSLog(@"%@", person);
+    int index = 0;
+    for (NSDictionary *user in person)
+    {
+    PFObject *user = person[index];
     [user setObject:self.gameId forKey:@"gameId"];
     [user save];
     NSLog(@"%@", self.gameId);
     NSLog(@"%@", user[@"name"]);
-    
+    index++;
+     }
 }
 
 
