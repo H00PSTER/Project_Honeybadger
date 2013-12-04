@@ -36,9 +36,12 @@
 
 // What happens when arm button is pressed
 
-- (IBAction)armButtonPressed:(id)sender
+- (IBAction)armButtonPressed:(id)sender;
 {
     // insert tracking iBeacon code
+        
+    
+    
 }
 
 
