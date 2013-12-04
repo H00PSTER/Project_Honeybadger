@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 @interface GameViewController ()
 @property CLLocationManager *locationManager;
+@property PFObject *user;
 @end
 
 @implementation GameViewController
@@ -66,16 +67,20 @@
     [query findObjectsInBackgroundWithTarget:self
                                     selector: @selector(loadPersonCallback:error:)];
     [self.locationManager startUpdatingLocation];
+    [NSTimer scheduledTimerWithTimeInterval:30 target:self
+                                   selector:@selector(update) userInfo:nil repeats:YES];
 
 }
 -(void) loadPersonCallback: (NSArray*) person error: (NSError*) error{
-    PFObject *user = person[0];
+    self.user = person[0];
+}
+
+-(void) update {
     NSNumber *myLatitude = [NSNumber numberWithDouble:self.locationManager.location.coordinate.latitude];
-    [user setObject: [myLatitude stringValue]  forKey:@"latitude"];
+    [self.user setObject: [myLatitude stringValue]  forKey:@"latitude"];
     NSNumber *myLongitude = [NSNumber numberWithDouble:self.locationManager.location.coordinate.longitude];
-    [user setObject: [myLongitude stringValue] forKey:@"longitude"];
-    [user saveInBackground];
-    
+    [self.user setObject: [myLongitude stringValue] forKey:@"longitude"];
+    [self.user saveInBackground];
 }
 - (void)didReceiveMemoryWarning
 {
