@@ -100,6 +100,7 @@
                  //NSLog(@"%@", optionsSingle.userInfo);
                  self.myFriends = friends;
                  [self createParseObjectLoop];
+                 
                  [self checkForUser];
              
                  [self shuffleArrays];
@@ -223,22 +224,27 @@
 - (void)checkPersonCallback: (NSArray*) person error: (NSError*) error
 {
   
+    
+    
+   
+    
+    
  
-    
-    PFObject *user = person[0];
-    [user setObject:@"true" forKey:@"hasLoggedOn"];
-    [user save];
-    
-    PFObject *player = [PFObject objectWithClassName:@"Player"];
-    if (user == Nil)
+    if ([person firstObject] == nil)
     {
+        PFObject *player = [PFObject objectWithClassName:@"Player"];
         player[@"name"] = self.myInfo[@"name"];
         player[@"facebookId"] = self.myInfo[@"id"];
         player[@"hasLoggedOn"] = @"true";
         [player saveInBackground];
     }
-
-
+else
+{
+    
+    PFObject *user = [person firstObject];
+    [user setObject:@"true" forKey:@"hasLoggedOn"];
+    [user save];
+}
     
 }
 
