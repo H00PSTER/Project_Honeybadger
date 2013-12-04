@@ -15,6 +15,7 @@
 @property NSArray *dynamicList;
 @property NSArray *trueFriendNames;
 @property NSMutableArray *invitedFriendNames;
+@property NSMutableArray *randomPlayers;
 @property NSString *gameId;
 @property NSString *tempUserName;
 
@@ -50,11 +51,69 @@
 
 #pragma mark - Table view data source
 
+
+
+- (void) shuffleArrays
+{
+    /*NSMutableArray *testArray = [[NSMutableArray alloc] init];
+    
+    [testArray addObject:@"1"];
+    [testArray addObject:@"2"];
+    [testArray addObject:@"3"];
+    [testArray addObject:@"4"];
+    [testArray addObject:@"5"];
+    */
+    [self.invitedFriendNames addObject:optionsSingle.userInfo[@"name"]];
+    
+    for (int x = 0; x < [self.invitedFriendNames count]; x++)
+    {
+        int randInt = (arc4random() % ([self.invitedFriendNames count] - x)) + x;
+        [self.invitedFriendNames exchangeObjectAtIndex:x withObjectAtIndex:randInt];
+    }
+    NSLog(@"%@", self.invitedFriendNames);
+    self.randomPlayers = self.invitedFriendNames;
+    [self assignTargets];
+}
+
+
+- (void) assignTargets
+{
+    
+    for (int index = 0; index < self.randomPlayers.count; index++)
+    {
+        
+        NSString *queryId;
+        NSString *targetId;
+        
+        if(index == self.randomPlayers.count - 1)
+        {
+            queryId = self.randomPlayers[index];
+            targetId = self.randomPlayers[0];
+            NSLog (@"Target Id %@", queryId);
+            NSLog(@"Hunter Id %@", targetId);
+        }
+        if(index != self.randomPlayers.count -1)
+        {
+            //change object
+            queryId = self.randomPlayers[index];
+            targetId = self.randomPlayers[index+1];
+            
+            NSLog(@"Target Id %@", queryId);
+            NSLog(@"Hunter Id %@", targetId);
+        }
+        
+    }
+}
+
+
+
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 
 {
     
         [self generateGameId];
+    [self shuffleArrays];
 
 }
 
