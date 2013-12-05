@@ -21,7 +21,6 @@
 @property NSString *one;
 @property NSString *two;
 @property NSNumber *userIndex;
-@property NSString *test;
 @property PFObject *user;
 @property NSString* randomString;
 
@@ -61,14 +60,7 @@
 
 - (void) shuffleArrays
 {
-    /*NSMutableArray *testArray = [[NSMutableArray alloc] init];
-    
-    [testArray addObject:@"1"];
-    [testArray addObject:@"2"];
-    [testArray addObject:@"3"];
-    [testArray addObject:@"4"];
-    [testArray addObject:@"5"];
-    */
+
     [self.invitedFriendNames addObject:optionsSingle.userInfo[@"name"]];
     
     for (int x = 0; x < [self.invitedFriendNames count]; x++)
@@ -76,7 +68,6 @@
         int randInt = (arc4random() % ([self.invitedFriendNames count] - x)) + x;
         [self.invitedFriendNames exchangeObjectAtIndex:x withObjectAtIndex:randInt];
     }
-    NSLog(@"%@", self.invitedFriendNames);
     self.randomPlayers = self.invitedFriendNames;
     [self assignTargets];
 }
@@ -85,9 +76,12 @@
 - (void) assignTargets
 {
     
+    
+    
+    /*
     for (int index = 0; index < self.randomPlayers.count; index++)
     {
-            /*
+        
     
         if(index == self.randomPlayers.count - 1)
         {
@@ -113,47 +107,27 @@
             [query whereKey:@"name" equalTo: self.one];
             [query findObjectsInBackgroundWithTarget:self
                                             selector: @selector(loadPersonCallback:error:)];
-            NSLog(@"Hunter Id %@ here 1", self.one);
-            NSLog(@"Target Id %@ here 1", self.two);
+            //NSLog(@"Hunter Id %@ here 1", self.one);
+            //NSLog(@"Target Id %@ here 1", self.two);
              
              
         }
-             */
+             
         
     }
+     */
 }
 -(void) loadPersonCallback: (NSArray*) person error: (NSError*) error
 {
-    int random = arc4random();
-    NSString *randomString = [NSString stringWithFormat:@"%d", random];
-    
+
     PFObject *user = person[0];
-    [user setObject:randomString forKey:@"recieverId"];
+    [user setObject:self.two forKey:@"recieverId"];
     [user save];
-    NSLog(@"%@", user[@"name"]);
-    NSLog(@"%@", randomString);
-    
-    self.randomString = randomString;
-    
-    PFQuery * query = [PFQuery queryWithClassName: @"Player"];
-    [query whereKey:@"name" equalTo: self.two];
-    [query findObjectsInBackgroundWithTarget:self
-                                    selector: @selector(loadPersonTwoCallback:error:)];
     
     
     
-}
--(void) loadPersonTwoCallback: (NSArray*) person error: (NSError*) error
-{
-    PFObject *user = person[0];
-    [user setObject:self.randomString forKey:@"targetId"];
-    [user save];
 
 }
-
-
-
-
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 
@@ -222,6 +196,8 @@
     {
     PFObject *user = person[index];
     [user setObject:self.gameId forKey:@"gameId"];
+    [user setObject:@"true" forKey:@"recieverId"];
+    [user setObject:self.randomPlayers forKey:@"targetArray"];
     [user save];
     //NSLog(@"%@", self.gameId);
     //NSLog(@"%@", user[@"name"]);

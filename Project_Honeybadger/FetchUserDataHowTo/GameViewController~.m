@@ -12,11 +12,40 @@
 @interface GameViewController ()
 @property CLLocationManager *locationManager;
 @property PFObject *user;
+@property NSArray *targetList;
+@property (weak, nonatomic) IBOutlet UILabel *targetLable;
+@property NSString *myId;
+@property NSString *userName;
 @end
 
 @implementation GameViewController
 - (IBAction)startTracking:(id)sender {
     [self.locationManager startUpdatingLocation];
+}
+- (IBAction)getTarget:(id)sender {
+    
+    PFQuery * query = [PFQuery queryWithClassName: @"Player"];
+    [query whereKey:@"facebookId" equalTo: self.myId];
+    [query findObjectsInBackgroundWithTarget:self
+                                    selector: @selector(loadTargetListCallback:error:)];
+     
+
+}
+-(void) loadTargetListCallback: (NSArray*) targetList error: (NSError*) error
+{
+    PFObject *user = targetList[0];
+    self.targetList = user[@"targetArray"];
+    for(int i = 0; i < self.targetList.count; i ++){
+        NSLog(@"%d", i);
+        if((i < self.targetList.count -1) /*&& ([self.userName isEqualToString:self.targetList[i]])*/){
+            self.targetLable.text = self.targetList[i+1];
+            NSLog(@"%@", self.targetList[i]);
+        }else{
+            NSLog(@"%@", self.targetList[0]);
+        }
+    }
+    
+    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -29,10 +58,10 @@
 }
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
     CLLocationCoordinate2D currentCoordinates = newLocation.coordinate;
-    NSLog(@"Entered new Location with the coordinates Latitude: %f Longitude: %f", currentCoordinates.latitude, currentCoordinates.longitude);
+
 }
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-    NSLog(@"Unable to start location manager. Error:%@", [error description]);
+
 }
 
 
@@ -41,7 +70,7 @@
 - (IBAction)armButtonPressed:(id)sender;
 {
     // insert tracking iBeacon code
-        
+    
     
     
 }
@@ -60,10 +89,10 @@
     self.locationManager.distanceFilter = 150;
     
 	// Do any additional setup after loading the view.
-    NSString *myId =  optionsSingle.userInfo[@"id"];
+    self.myId =  optionsSingle.userInfo[@"id"];
     PFQuery * query = [PFQuery queryWithClassName: @"Player"];
     query.limit = 1000;
-    [query whereKey: @"facebookId" equalTo: myId];
+    [query whereKey: @"facebookId" equalTo: self.myId];
     [query findObjectsInBackgroundWithTarget:self
                                     selector: @selector(loadPersonCallback:error:)];
     [self.locationManager startUpdatingLocation];
@@ -73,6 +102,7 @@
 }
 -(void) loadPersonCallback: (NSArray*) person error: (NSError*) error{
     self.user = person[0];
+    self.userName = self.user[@"name"];
 }
 
 -(void) update {

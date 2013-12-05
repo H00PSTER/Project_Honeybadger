@@ -29,7 +29,7 @@
     //NSString *test = @"12.348573";
     //double myDouble = [test doubleValue];
     
-    
+    /*
     [super viewDidLoad];
     optionsSingle = [GlobalVariables singleObject];
     NSString *myId =  optionsSingle.userInfo[@"id"];
@@ -37,6 +37,7 @@
     [query whereKey:@"facebookId" equalTo:myId];
     [query findObjectsInBackgroundWithTarget:self
                                     selector: @selector(loadPersonCallback:error:)];
+     */
     
 
 }
