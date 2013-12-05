@@ -18,6 +18,12 @@
 @property NSMutableArray *randomPlayers;
 @property NSString *gameId;
 @property NSString *tempUserName;
+@property NSString *one;
+@property NSString *two;
+@property NSNumber *userIndex;
+@property NSString *test;
+@property PFObject *user;
+@property NSString* randomString;
 
 @end
 
@@ -81,29 +87,70 @@
     
     for (int index = 0; index < self.randomPlayers.count; index++)
     {
-        
-        NSString *queryId;
-        NSString *targetId;
-        
+            /*
+    
         if(index == self.randomPlayers.count - 1)
         {
-            queryId = self.randomPlayers[index];
-            targetId = self.randomPlayers[0];
-            NSLog (@"Target Id %@", queryId);
-            NSLog(@"Hunter Id %@", targetId);
+            
+            self.one = self.randomPlayers[index];
+            self.two = self.randomPlayers[0];
+            //NSLog (@"Hunter Id %@ here 2", self.one);
+            //NSLog(@"Target Id %@ here 2", self.two);
+            PFQuery * query = [PFQuery queryWithClassName: @"Player"];
+            [query whereKey:@"name" equalTo: self.one];
+            [query findObjectsInBackgroundWithTarget:self
+                                            selector: @selector(loadPersonCallback:error:)];
+             
+            
         }
         if(index != self.randomPlayers.count -1)
         {
-            //change object
-            queryId = self.randomPlayers[index];
-            targetId = self.randomPlayers[index+1];
             
-            NSLog(@"Target Id %@", queryId);
-            NSLog(@"Hunter Id %@", targetId);
+            //change object
+            self.one = self.randomPlayers[index];
+            self.two = self.randomPlayers[index+1];
+            PFQuery * query = [PFQuery queryWithClassName: @"Player"];
+            [query whereKey:@"name" equalTo: self.one];
+            [query findObjectsInBackgroundWithTarget:self
+                                            selector: @selector(loadPersonCallback:error:)];
+            NSLog(@"Hunter Id %@ here 1", self.one);
+            NSLog(@"Target Id %@ here 1", self.two);
+             
+             
         }
+             */
         
     }
 }
+-(void) loadPersonCallback: (NSArray*) person error: (NSError*) error
+{
+    int random = arc4random();
+    NSString *randomString = [NSString stringWithFormat:@"%d", random];
+    
+    PFObject *user = person[0];
+    [user setObject:randomString forKey:@"recieverId"];
+    [user save];
+    NSLog(@"%@", user[@"name"]);
+    NSLog(@"%@", randomString);
+    
+    self.randomString = randomString;
+    
+    PFQuery * query = [PFQuery queryWithClassName: @"Player"];
+    [query whereKey:@"name" equalTo: self.two];
+    [query findObjectsInBackgroundWithTarget:self
+                                    selector: @selector(loadPersonTwoCallback:error:)];
+    
+    
+    
+}
+-(void) loadPersonTwoCallback: (NSArray*) person error: (NSError*) error
+{
+    PFObject *user = person[0];
+    [user setObject:self.randomString forKey:@"targetId"];
+    [user save];
+
+}
+
 
 
 
@@ -124,11 +171,11 @@
 {
     
     NSString *invitedFriendName = self.trueFriendNames[indexPath.row];
-    NSLog(@"%@", invitedFriendName);
+    //NSLog(@"%@", invitedFriendName);
     
     
     [self.invitedFriendNames addObject:invitedFriendName];
-    NSLog(@"%@", self.invitedFriendNames);
+    //NSLog(@"%@", self.invitedFriendNames);
     
 }
 
@@ -138,7 +185,7 @@
     int randomGameId = arc4random();
     NSString* GameId = [NSString stringWithFormat:@"%d", randomGameId];
     self.GameId = GameId;
-    NSLog(@"%@", self.gameId);
+    //NSLog(@"%@", self.gameId);
     for (NSString *userName in self.invitedFriendNames)
     {
         self.tempUserName = userName;
@@ -169,15 +216,15 @@
 
 - (void) assignParseObjectsWithIds: (NSArray*) person error: (NSError*) error
 {
-    NSLog(@"%@", person);
+    //NSLog(@"%@", person);
     int index = 0;
     for (NSDictionary *user in person)
     {
     PFObject *user = person[index];
     [user setObject:self.gameId forKey:@"gameId"];
     [user save];
-    NSLog(@"%@", self.gameId);
-    NSLog(@"%@", user[@"name"]);
+    //NSLog(@"%@", self.gameId);
+    //NSLog(@"%@", user[@"name"]);
     index++;
      }
 }

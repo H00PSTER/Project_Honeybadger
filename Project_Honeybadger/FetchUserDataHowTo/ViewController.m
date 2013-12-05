@@ -184,10 +184,13 @@
  
     if ([person firstObject] == nil)
     {
+        int random = arc4random();
+        NSString *randomString = [NSString stringWithFormat:@"%d", random];
         PFObject *player = [PFObject objectWithClassName:@"Player"];
         player[@"name"] = self.myInfo[@"name"];
         player[@"facebookId"] = self.myInfo[@"id"];
         player[@"hasLoggedOn"] = @"true";
+        player[@"targetId"] = randomString;
         [player saveInBackground];
     }
 else
