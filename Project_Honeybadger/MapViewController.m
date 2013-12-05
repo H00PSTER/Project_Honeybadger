@@ -13,6 +13,7 @@
 @property NSString *targetName;
 @property NSArray *targetList;
 @property NSString *usersName;
+@property CLLocation *myLocation;
 @end
 
 @implementation MapViewController
@@ -80,6 +81,17 @@
     coord.longitude = myLong;
     targetPing.coordinate = coord;
     [self.map addAnnotation: targetPing];
+}
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    
+    CLLocation* location = [locations lastObject];
+    self.myLocation = location;
+    MKCoordinateRegion mapRegion;
+    mapRegion.center = location.coordinate;
+    mapRegion.span.latitudeDelta = .0001;
+    mapRegion.span.longitudeDelta = .0001;
+    [self.map setRegion:(mapRegion) animated:(YES)];
+    
 }
 
 

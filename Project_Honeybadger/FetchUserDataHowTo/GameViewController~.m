@@ -12,7 +12,7 @@
 @interface GameViewController ()<UITextFieldDelegate>
 @property CLLocationManager *locationManager;
 @property PFObject *user;
-@property NSArray *targetList;
+@property NSMutableArray *targetList;
 @property (weak, nonatomic) IBOutlet UILabel *targetLable;
 @property (weak, nonatomic) IBOutlet UILabel *idToGiveToAssassinator;
 @property (weak, nonatomic) IBOutlet UITextField *targetCode;
@@ -20,6 +20,7 @@
 @property NSString *userName;
 @property NSString *targetName;
 @property NSString *targetId;
+@property int targetIndex;
 
 
 @end
@@ -29,7 +30,7 @@
 @synthesize textField;
 - (IBAction)getTextFromUser:(id)sender
 {
-    if ([_targetId isEqualToString:[textField text]])
+    if ([self.targetId isEqualToString:[textField text]])
     {
         //Call parse method to change user status
         NSLog(@"Win");
@@ -51,29 +52,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 -(void) loadTargetListCallback: (NSArray*) targetList error: (NSError*) error
 {
     PFObject *user = targetList[0];
@@ -84,10 +62,12 @@
         {
             self.targetLable.text = self.targetList[i+1];
             self.targetName = self.targetList[i+1];
+            self.targetIndex = i+1;
         }else if((i == self.targetList.count -1) && ([self.userName isEqualToString:self.targetList[i]]))
         {
             self.targetLable.text = self.targetList[0];
             self.targetName = self.targetList[0];
+            self.targetIndex = 0;
         }
     }
     PFQuery * query = [PFQuery queryWithClassName: @"Player"];
