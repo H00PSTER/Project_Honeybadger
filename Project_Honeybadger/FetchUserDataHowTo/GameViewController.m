@@ -20,16 +20,26 @@
 @property NSString *userName;
 @property NSString *targetName;
 @property NSString *targetId;
+
+
 @end
 
 @implementation GameViewController
 @synthesize targetCode;
+@synthesize textField;
+- (IBAction)getTextFromUser:(id)sender
+{
+    if ([_targetId isEqualToString:[textField text]])
+    {
+        //Call parse method to change user status
+        NSLog(@"Win");
+    }
+}
+
 - (IBAction)startTracking:(id)sender {
     [self.locationManager startUpdatingLocation];
 }
-- (IBAction)getTextFromUser:(UITextField *)targetCode {
-    
-}
+
 - (IBAction)getTarget:(id)sender {
     self.targetCode.text;
     PFQuery * query = [PFQuery queryWithClassName: @"Player"];
@@ -106,7 +116,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+  
     optionsSingle = [GlobalVariables singleObject];
     self.locationManager = [[CLLocationManager alloc] init];
     [self.locationManager setDelegate:self];
@@ -124,7 +134,10 @@
     [self.locationManager startUpdatingLocation];
     [NSTimer scheduledTimerWithTimeInterval:10 target:self
                                    selector:@selector(update) userInfo:nil repeats:YES];
+    NSString *test = [textField text];
+    NSLog(@"%@", test);
 
+      NSLog(@"%@", self.targetId);
 }
 -(void) loadPersonCallback: (NSArray*) person error: (NSError*) error{
     self.user = person[0];

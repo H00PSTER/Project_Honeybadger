@@ -69,54 +69,9 @@
         [self.invitedFriendNames exchangeObjectAtIndex:x withObjectAtIndex:randInt];
     }
     self.randomPlayers = self.invitedFriendNames;
-    [self assignTargets];
 }
 
 
-- (void) assignTargets
-{
-    
-    
-    
-    /*
-    for (int index = 0; index < self.randomPlayers.count; index++)
-    {
-        
-    
-        if(index == self.randomPlayers.count - 1)
-        {
-            
-            self.one = self.randomPlayers[index];
-            self.two = self.randomPlayers[0];
-            //NSLog (@"Hunter Id %@ here 2", self.one);
-            //NSLog(@"Target Id %@ here 2", self.two);
-            PFQuery * query = [PFQuery queryWithClassName: @"Player"];
-            [query whereKey:@"name" equalTo: self.one];
-            [query findObjectsInBackgroundWithTarget:self
-                                            selector: @selector(loadPersonCallback:error:)];
-             
-            
-        }
-        if(index != self.randomPlayers.count -1)
-        {
-            
-            //change object
-            self.one = self.randomPlayers[index];
-            self.two = self.randomPlayers[index+1];
-            PFQuery * query = [PFQuery queryWithClassName: @"Player"];
-            [query whereKey:@"name" equalTo: self.one];
-            [query findObjectsInBackgroundWithTarget:self
-                                            selector: @selector(loadPersonCallback:error:)];
-            //NSLog(@"Hunter Id %@ here 1", self.one);
-            //NSLog(@"Target Id %@ here 1", self.two);
-             
-             
-        }
-             
-        
-    }
-     */
-}
 -(void) loadPersonCallback: (NSArray*) person error: (NSError*) error
 {
 
@@ -145,11 +100,9 @@
 {
     
     NSString *invitedFriendName = self.trueFriendNames[indexPath.row];
-    //NSLog(@"%@", invitedFriendName);
     
     
     [self.invitedFriendNames addObject:invitedFriendName];
-    //NSLog(@"%@", self.invitedFriendNames);
     
 }
 
@@ -159,7 +112,6 @@
     int randomGameId = arc4random();
     NSString* GameId = [NSString stringWithFormat:@"%d", randomGameId];
     self.GameId = GameId;
-    //NSLog(@"%@", self.gameId);
     for (NSString *userName in self.invitedFriendNames)
     {
         self.tempUserName = userName;
@@ -190,7 +142,6 @@
 
 - (void) assignParseObjectsWithIds: (NSArray*) person error: (NSError*) error
 {
-    //NSLog(@"%@", person);
     int index = 0;
     for (NSDictionary *user in person)
     {
@@ -199,8 +150,6 @@
     [user setObject:@"true" forKey:@"recieverId"];
     [user setObject:self.randomPlayers forKey:@"targetArray"];
     [user save];
-    //NSLog(@"%@", self.gameId);
-    //NSLog(@"%@", user[@"name"]);
     index++;
      }
 }

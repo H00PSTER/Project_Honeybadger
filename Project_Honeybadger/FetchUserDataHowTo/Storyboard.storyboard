@@ -209,12 +209,12 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter target's code here" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a7X-X2-Kw1">
-                                <rect key="frame" x="79" y="393" width="176" height="30"/>
+                                <rect key="frame" x="79" y="187" width="176" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="getTextFromUser:" destination="GUc-Bt-dfw" eventType="editingDidEnd" id="aMo-ka-Ndv"/>
+                                    <action selector="getTextFromUser:" destination="GUc-Bt-dfw" eventType="editingDidEnd" id="4CB-Vw-4DN"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FnS-CF-awX">
@@ -250,6 +250,7 @@
                         <outlet property="idToGiveToAssassinator" destination="o7f-uM-ppa" id="Kxa-XT-Bhg"/>
                         <outlet property="targetCode" destination="a7X-X2-Kw1" id="lcu-se-UMz"/>
                         <outlet property="targetLable" destination="uMi-ap-ZIz" id="OGy-sf-Rfh"/>
+                        <outlet property="textField" destination="a7X-X2-Kw1" id="NvF-fJ-r4i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qW4-rh-s0I" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -302,9 +303,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Honeybadger_Main Background.png" width="640" height="1136"/>
-        <image name="Honeybadger_Main Background.png" width="640" height="1136"/>
-        <image name="Honeybadger_Main Background.png" width="640" height="1136"/>
         <image name="Honeybadger_Main Background.png" width="640" height="1136"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

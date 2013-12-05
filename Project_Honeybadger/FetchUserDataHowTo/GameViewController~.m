@@ -20,16 +20,26 @@
 @property NSString *userName;
 @property NSString *targetName;
 @property NSString *targetId;
+
+
 @end
 
 @implementation GameViewController
 @synthesize targetCode;
+@synthesize textField;
+- (IBAction)getTextFromUser:(id)sender
+{
+    if ([_targetId isEqualToString:[textField text]])
+    {
+        //Call parse method to change user status
+        NSLog(@"Win");
+    }
+}
+
 - (IBAction)startTracking:(id)sender {
     [self.locationManager startUpdatingLocation];
 }
-- (IBAction)getTextFromUser:(UITextField *)targetCode {
-    
-}
+
 - (IBAction)getTarget:(id)sender {
     self.targetCode.text;
     PFQuery * query = [PFQuery queryWithClassName: @"Player"];
@@ -39,6 +49,29 @@
      
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 -(void) loadTargetListCallback: (NSArray*) targetList error: (NSError*) error
@@ -56,7 +89,6 @@
             self.targetLable.text = self.targetList[0];
             self.targetName = self.targetList[0];
         }
-        NSLog(@"%@", self.targetName);
     }
     PFQuery * query = [PFQuery queryWithClassName: @"Player"];
     [query whereKey:@"name" equalTo: self.targetName];
@@ -66,7 +98,7 @@
     
     
 }
--(void) loadTargetPersonListCallback: (NSArray*) target error: (NSError*) error
+-(void) loadTargetPersonCallback: (NSArray*) target error: (NSError*) error
 {
     PFObject *user = target[0];
     self.targetId = user[@"targetId"];
@@ -107,7 +139,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+  
     optionsSingle = [GlobalVariables singleObject];
     self.locationManager = [[CLLocationManager alloc] init];
     [self.locationManager setDelegate:self];
@@ -125,7 +157,10 @@
     [self.locationManager startUpdatingLocation];
     [NSTimer scheduledTimerWithTimeInterval:10 target:self
                                    selector:@selector(update) userInfo:nil repeats:YES];
+    NSString *test = [textField text];
+    NSLog(@"%@", test);
 
+      NSLog(@"%@", self.targetId);
 }
 -(void) loadPersonCallback: (NSArray*) person error: (NSError*) error{
     self.user = person[0];

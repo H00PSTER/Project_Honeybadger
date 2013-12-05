@@ -10,7 +10,9 @@
 
 @interface MapViewController ()
 @property (weak, nonatomic) IBOutlet MKMapView *map;
-
+@property NSString *targetName;
+@property NSArray *targetList;
+@property NSString *usersName;
 @end
 
 @implementation MapViewController
@@ -26,10 +28,9 @@
 
 - (void)viewDidLoad
 {
-    //NSString *test = @"12.348573";
-    //double myDouble = [test doubleValue];
+
     
-    /*
+    
     [super viewDidLoad];
     optionsSingle = [GlobalVariables singleObject];
     NSString *myId =  optionsSingle.userInfo[@"id"];
@@ -37,7 +38,7 @@
     [query whereKey:@"facebookId" equalTo:myId];
     [query findObjectsInBackgroundWithTarget:self
                                     selector: @selector(loadPersonCallback:error:)];
-     */
+     
     
 
 }
@@ -45,10 +46,26 @@
 -(void) loadPersonCallback: (NSArray*) person error: (NSError*) error {
     
     PFObject *user = person[0];
+    
+    self.usersName = user[@"name"];
+    NSLog(@"%@", self.usersName);
+    self.targetList = user[@"targetArray"];
+    for(int i = 0; i < self.targetList.count; i ++)
+    {
+        if((i < self.targetList.count -1) && ([self.usersName isEqualToString:self.targetList[i]]))
+        {
+            self.targetName = self.targetList[i+1];
+        }else if((i == self.targetList.count -1) && ([self.usersName isEqualToString:self.targetList[i]]))
+        {
+            self.targetName = self.targetList[0];
+        }
+    }
+    
+    NSLog(@"%@", self.targetName);
     PFQuery * query = [PFQuery queryWithClassName: @"Player"];
-    [query whereKey:@"facebookId" equalTo:user[@"targetId"]];
+    [query whereKey:@"name" equalTo:self.targetName];
     [query findObjectsInBackgroundWithTarget:self
-                                    selector: @selector(loadTargetCallback:error:)];
+                                   selector: @selector(loadTargetCallback:error:)];
     
 }
 -(void) loadTargetCallback: (NSArray*) person error: (NSError*) error {
