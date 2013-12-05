@@ -213,6 +213,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="getTextFromUser:" destination="GUc-Bt-dfw" eventType="editingDidEnd" id="aMo-ka-Ndv"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FnS-CF-awX">
                                 <rect key="frame" x="94" y="0.0" width="146" height="127"/>
@@ -245,6 +248,7 @@
                     <navigationItem key="navigationItem" id="o6O-CT-MRr"/>
                     <connections>
                         <outlet property="idToGiveToAssassinator" destination="o7f-uM-ppa" id="Kxa-XT-Bhg"/>
+                        <outlet property="targetCode" destination="a7X-X2-Kw1" id="lcu-se-UMz"/>
                         <outlet property="targetLable" destination="uMi-ap-ZIz" id="OGy-sf-Rfh"/>
                     </connections>
                 </viewController>
