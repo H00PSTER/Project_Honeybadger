@@ -198,6 +198,9 @@ else
     
     PFObject *user = [person firstObject];
     [user setObject:@"true" forKey:@"hasLoggedOn"];
+    int random = arc4random();
+    NSString *randomString = [NSString stringWithFormat:@"%d", random];
+    user[@"targetId"] = randomString;
     [user save];
 }
     

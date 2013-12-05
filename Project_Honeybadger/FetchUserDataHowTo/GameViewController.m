@@ -9,21 +9,29 @@
 #import "GameViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import <Parse/Parse.h>
-@interface GameViewController ()
+@interface GameViewController ()<UITextFieldDelegate>
 @property CLLocationManager *locationManager;
 @property PFObject *user;
 @property NSArray *targetList;
 @property (weak, nonatomic) IBOutlet UILabel *targetLable;
+@property (weak, nonatomic) IBOutlet UILabel *idToGiveToAssassinator;
+@property (weak, nonatomic) IBOutlet UITextField *targetCode;
 @property NSString *myId;
 @property NSString *userName;
+@property NSString *targetName;
+@property NSString *targetId;
 @end
 
 @implementation GameViewController
+@synthesize targetCode;
 - (IBAction)startTracking:(id)sender {
     [self.locationManager startUpdatingLocation];
 }
-- (IBAction)getTarget:(id)sender {
+- (IBAction)getTextFromUser:(UITextField *)targetCode {
     
+}
+- (IBAction)getTarget:(id)sender {
+    self.targetCode.text;
     PFQuery * query = [PFQuery queryWithClassName: @"Player"];
     [query whereKey:@"facebookId" equalTo: self.myId];
     [query findObjectsInBackgroundWithTarget:self
@@ -31,20 +39,38 @@
      
 
 }
+
+
 -(void) loadTargetListCallback: (NSArray*) targetList error: (NSError*) error
 {
     PFObject *user = targetList[0];
     self.targetList = user[@"targetArray"];
-    for(int i = 0; i < self.targetList.count; i ++){
-        NSLog(@"%d", i);
-        if((i < self.targetList.count -1) && ([self.userName isEqualToString:self.targetList[i]])){
+    for(int i = 0; i < self.targetList.count; i ++)
+    {
+        if((i < self.targetList.count -1) && ([self.userName isEqualToString:self.targetList[i]]))
+        {
             self.targetLable.text = self.targetList[i+1];
-            NSLog(@"%@", self.targetList[i]);
-        }else{
-            NSLog(@"%@", self.targetList[0]);
+            self.targetName = self.targetList[i+1];
+        }else if((i == self.targetList.count -1) && ([self.userName isEqualToString:self.targetList[i]]))
+        {
+            self.targetLable.text = self.targetList[0];
+            self.targetName = self.targetList[0];
         }
     }
+    PFQuery * query = [PFQuery queryWithClassName: @"Player"];
+    [query whereKey:@"name" equalTo: self.targetName];
+    [query findObjectsInBackgroundWithTarget:self
+                                    selector: @selector(loadTargetPersonCallback:error:)];
     
+    
+    
+}
+-(void) loadTargetPersonCallback: (NSArray*) target error: (NSError*) error
+{
+    PFObject *user = target[0];
+    self.targetId = user[@"targetId"];
+    NSLog(@"%@", self.targetId);
+    NSLog(@"here");
     
 }
 
@@ -103,6 +129,7 @@
 -(void) loadPersonCallback: (NSArray*) person error: (NSError*) error{
     self.user = person[0];
     self.userName = self.user[@"name"];
+    self.idToGiveToAssassinator.text = self.user[@"targetId"];
 }
 
 -(void) update {

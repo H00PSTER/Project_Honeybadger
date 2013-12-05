@@ -213,6 +213,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="getTextFromUser:" destination="GUc-Bt-dfw" eventType="editingDidEnd" id="aMo-ka-Ndv"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FnS-CF-awX">
                                 <rect key="frame" x="94" y="0.0" width="146" height="127"/>
@@ -232,11 +235,20 @@
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="              Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7f-uM-ppa">
+                                <rect key="frame" x="0.0" y="283" width="320" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="o6O-CT-MRr"/>
                     <connections>
+                        <outlet property="idToGiveToAssassinator" destination="o7f-uM-ppa" id="Kxa-XT-Bhg"/>
+                        <outlet property="targetCode" destination="a7X-X2-Kw1" id="lcu-se-UMz"/>
                         <outlet property="targetLable" destination="uMi-ap-ZIz" id="OGy-sf-Rfh"/>
                     </connections>
                 </viewController>
@@ -409,6 +421,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Honeybadger_Main Background.png" width="640" height="1136"/>
+        <image name="Honeybadger_Main Background.png" width="640" height="1136"/>
+        <image name="Honeybadger_Main Background.png" width="640" height="1136"/>
         <image name="Honeybadger_Main Background.png" width="640" height="1136"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
