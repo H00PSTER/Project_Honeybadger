@@ -14,6 +14,9 @@
  * limitations under the License.
  */
 
+
+// this class sets up parse
+
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import "ViewController.h"

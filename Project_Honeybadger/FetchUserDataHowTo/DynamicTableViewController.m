@@ -37,6 +37,8 @@
     return self;
 }
 
+
+
 - (void)viewDidLoad
 {
     
@@ -57,6 +59,8 @@
 #pragma mark - Table view data source
 
 
+// This method takes the array of names that you have invited to the game and shuffles them up. This is how we decided targets.
+//Each person in the array will be targeting their index in the array + 1, except the last person in the array who will be getting index 0
 
 - (void) shuffleArrays
 {
@@ -71,18 +75,8 @@
     self.randomPlayers = self.invitedFriendNames;
 }
 
-
--(void) loadPersonCallback: (NSArray*) person error: (NSError*) error
-{
-
-    PFObject *user = person[0];
-    [user setObject:self.two forKey:@"recieverId"];
-    [user save];
-    
-    
-    
-
-}
+// This method was set up to transfer data between classes. I cannot say if that was ever successfully done
+// it calls the method that sets up the targets, and the method that assigns a common gameId
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 
@@ -96,6 +90,8 @@
 }
 
 
+// This method takes all of the friends that you click on on the invite screen and puts them into an array that we can then performe logic on
+
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -106,6 +102,8 @@
     
 }
 
+
+// This is the method that generates the common game id that we use to identify who is in the game we are in and who is not. The id is random
 
 - (void) generateGameId
 {
@@ -119,6 +117,8 @@
     }
 }
 
+// This is the method that queries for each of the invited players' game objects to use in the chosen selector method
+
 -(void) assignGameId
 
 {
@@ -126,11 +126,7 @@
     for (NSString *invitedUserName in self.invitedFriendNames)
     {
         PFQuery * query = [PFQuery queryWithClassName: @"Player"];
-        
         [query whereKey:@"name" equalTo:self.invitedFriendNames[i]];
-        
-            
-        
         query.limit = 1000;
         [query findObjectsInBackgroundWithTarget:self
                                             selector: @selector(assignParseObjectsWithIds:error:)];
@@ -140,6 +136,8 @@
     
 }
 
+// This is the afore mentioned selector method. It takes the game objects of each of the players and assigns them the common game id and the shuffled array of the same players that we use to assign targets
+
 - (void) assignParseObjectsWithIds: (NSArray*) person error: (NSError*) error
 {
     int index = 0;
@@ -147,7 +145,6 @@
     {
     PFObject *user = person[index];
     [user setObject:self.gameId forKey:@"gameId"];
-    [user setObject:@"true" forKey:@"recieverId"];
     [user setObject:self.randomPlayers forKey:@"targetArray"];
     [user save];
     index++;

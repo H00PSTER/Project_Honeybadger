@@ -6,6 +6,9 @@
 //  Copyright (c) 2013 Facebook Inc. All rights reserved.
 //
 
+
+// Believe it or not all of these properties were used and necessary to our line of thinking
+
 #import "GameViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import <Parse/Parse.h>
@@ -28,30 +31,38 @@
 @implementation GameViewController
 @synthesize targetCode;
 @synthesize textField;
+
+// we ran out of time. this was supposed to upload an updated array if the user entered the correct data into the code box. we have all the necessary information, we just failed to work out our problems in time
+
 - (IBAction)getTextFromUser:(id)sender
 {
     if ([self.targetId isEqualToString:[textField text]])
     {
         //Call parse method to change user status
         [self.targetList removeObjectAtIndex:self.targetIndex];
-        NSLog(@"Win");
+        
     }
 }
 
-- (IBAction)startTracking:(id)sender {
-    [self.locationManager startUpdatingLocation];
-}
 
 - (IBAction)getTarget:(id)sender {
-    self.targetCode.text;
     PFQuery * query = [PFQuery queryWithClassName: @"Player"];
     [query whereKey:@"facebookId" equalTo: self.myId];
     [query findObjectsInBackgroundWithTarget:self
-                                    selector: @selector(loadTargetListCallback:error:)];
+                                   selector: @selector(loadTargetListCallback:error:)];
      
 
 }
 
+
+// This is very similar logic to another method we used when doing logic with trying to figure out what to do with targets and assassins.
+/*
+We had a lot of trouble with this method. Our original idea was to give each person a unique tagetId on parse and then query for said id when in range of the iBeacon.
+The problem we could not over come was that the same id was uploaded for every parse object. We believe this to be because our method would finish running before parase would finish quering and saving
+In the state that it is in now I do not think that this method does much, but everytime I get rid of it the "Get Target" button doesnt work, so I decided to leave it be.
+ 
+also it strings together a number of parse queries, not the most economical choice, but at the time it seemed like a good idea
+ */
 
 -(void) loadTargetListCallback: (NSArray*) targetList error: (NSError*) error
 {
@@ -83,9 +94,7 @@
 {
     PFObject *user = target[0];
     self.targetId = user[@"targetId"];
-    NSLog(@"%@", self.targetId);
-    NSLog(@"here");
-    
+
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -96,25 +105,29 @@
     }
     return self;
 }
+
+
+
+// I don't think this code does anything at all, but I'm not sure, and at this point I dont want to cause any new problems
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
     CLLocationCoordinate2D currentCoordinates = newLocation.coordinate;
 
 }
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-
-}
 
 
-// What happens when arm button is pressed
+
+
+
+// This is a weird method. We made it when iBeacon was still a priority, and I think that it used to be the button that said "Arm", but that we changed it to "Ping" and that is button it refferences.
+
 
 - (IBAction)armButtonPressed:(id)sender;
 {
-    // insert tracking iBeacon code
-    
-    
-    
 }
 
+
+// this big blob of code is what updates the users location and than saves it to parse
 
 
 - (void)viewDidLoad
@@ -139,9 +152,6 @@
     [NSTimer scheduledTimerWithTimeInterval:10 target:self
                                    selector:@selector(update) userInfo:nil repeats:YES];
     NSString *test = [textField text];
-    NSLog(@"%@", test);
-
-      NSLog(@"%@", self.targetId);
 }
 -(void) loadPersonCallback: (NSArray*) person error: (NSError*) error{
     self.user = person[0];

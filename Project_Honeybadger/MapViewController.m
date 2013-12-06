@@ -27,6 +27,8 @@
     return self;
 }
 
+// In the viewDidLoad method I grabbed the user's facebook id from a global variable and use it to query for his/her parse object
+
 - (void)viewDidLoad
 {
 
@@ -44,12 +46,13 @@
 
 }
 
+// This method recieves the users parse object uses it to find the users target's name
+
 -(void) loadPersonCallback: (NSArray*) person error: (NSError*) error {
     
     PFObject *user = person[0];
     
     self.usersName = user[@"name"];
-    NSLog(@"%@", self.usersName);
     self.targetList = user[@"targetArray"];
     for(int i = 0; i < self.targetList.count; i ++)
     {
@@ -62,13 +65,15 @@
         }
     }
     
-    NSLog(@"%@", self.targetName);
     PFQuery * query = [PFQuery queryWithClassName: @"Player"];
     [query whereKey:@"name" equalTo:self.targetName];
     [query findObjectsInBackgroundWithTarget:self
                                    selector: @selector(loadTargetCallback:error:)];
     
 }
+
+// this callback method recieves the users target as a parse object and adds it as an annotation to the map
+
 -(void) loadTargetCallback: (NSArray*) person error: (NSError*) error {
     PFObject *user = person[0];
     NSString*latitude = user[@"latitude"];
@@ -82,18 +87,6 @@
     targetPing.coordinate = coord;
     [self.map addAnnotation: targetPing];
 }
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    
-    CLLocation* location = [locations lastObject];
-    self.myLocation = location;
-    MKCoordinateRegion mapRegion;
-    mapRegion.center = location.coordinate;
-    mapRegion.span.latitudeDelta = .0001;
-    mapRegion.span.longitudeDelta = .0001;
-    [self.map setRegion:(mapRegion) animated:(YES)];
-    
-}
-
 
 - (void)didReceiveMemoryWarning
 {

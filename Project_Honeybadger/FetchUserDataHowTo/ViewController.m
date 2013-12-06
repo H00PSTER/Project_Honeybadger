@@ -64,6 +64,8 @@
 }
 
 
+// This is a method from a facebook tutorial that we added to. It gives us an array of our friends that we then perform logic on
+
 - (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView
 {
     self.userInfoTextView.hidden = NO;
@@ -77,7 +79,6 @@
             
                  if(error)
                  {
-                     NSLog(@"Error: %@", error);
                      return;
                  }
                  
@@ -90,14 +91,12 @@
                  NSArray* friends = (NSArray*)[data data];
                  self.myFriends = (NSArray*)[data data];
                  optionsSingle.userFriends = self.myFriends;
-                 //NSLog(@"%@", optionsSingle.userFriends);
                  
                  NSDictionary *user = @{@"id":userId, @"name":userName};
                  
                  self.myInfo = user;
                  optionsSingle.userInfo = user;
                  
-                 //NSLog(@"%@", optionsSingle.userInfo);
                  self.myFriends = friends;
                  [self createParseObjectLoop];
                  
@@ -147,7 +146,7 @@
 
 
 
-
+// This method checks for mutual friends with the app
 
 - (void) mutualFriendsWithApp
 
@@ -172,6 +171,7 @@
     
 }
 
+// checks to see if the user is already in parse, creates them a parse object if they are not, and makes sure not to create a second one if they are
 
 - (void)checkPersonCallback: (NSArray*) person error: (NSError*) error
 {
@@ -207,7 +207,7 @@ else
 }
 
 
-
+// This method creats a parse object for each one of our facebook friends
 
 - (void) loadPersonCallback: (NSArray*) person error: (NSError*) error
 {
@@ -249,6 +249,8 @@ else
        
 }
 }
+
+// This method makes sure that a person is not added to parse twice
 
 - (void) checkForMutualTrueFriends
 {
